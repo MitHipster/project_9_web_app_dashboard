@@ -1,0 +1,33 @@
+// Font styles
+
+@mixin font-settings($size, $weight, $color: inherit) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+
+
+// Flex display settings
+
+@mixin display-flex($justify: null, $align: null) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align; 
+}
+
+
+
+// Media queries
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}

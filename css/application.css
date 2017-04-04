@@ -1,0 +1,63 @@
+/* line 3, ../scss/utilities/_extends.scss */
+body {
+  font-family: "Catamaran", sans-serif; }
+
+/* line 5, ../scss/base/_base.scss */
+* {
+  box-sizing: border-box; }
+
+/* line 9, ../scss/base/_base.scss */
+body {
+  background-color: #f5f2e6; }
+
+/* line 7, ../scss/layout/_header.scss */
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 72px;
+  color: #d3d3d3;
+  background-color: #3e5c76;
+  padding: 20px; }
+  /* line 13, ../scss/layout/_header.scss */
+  header #company {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: inherit;
+    margin: 0; }
+    /* line 16, ../scss/layout/_header.scss */
+    header #company strong {
+      color: #f5f5f5; }
+    /* line 19, ../scss/layout/_header.scss */
+    header #company span {
+      font-size: 1rem; }
+  /* line 23, ../scss/layout/_header.scss */
+  header #user {
+    display: flex;
+    justify-content: flex-end; }
+    /* line 25, ../scss/layout/_header.scss */
+    header #user #badge {
+      width: 44px;
+      padding-right: 20px;
+      border-right: 1px solid; }
+    /* line 30, ../scss/layout/_header.scss */
+    header #user #user-photo {
+      width: 32px;
+      height: 32px;
+      margin-left: 20px;
+      border-radius: 50%;
+      border: 1px solid; }
+    /* line 37, ../scss/layout/_header.scss */
+    header #user #user-name {
+      display: none; }
+      @media (min-width: 768px) {
+        /* line 37, ../scss/layout/_header.scss */
+        header #user #user-name {
+          display: block;
+          font-size: 0.9rem;
+          font-weight: 300;
+          color: inherit;
+          margin: 0;
+          padding-top: 4px;
+          padding-left: 10px; } }
+
+/*# sourceMappingURL=application.css.map */

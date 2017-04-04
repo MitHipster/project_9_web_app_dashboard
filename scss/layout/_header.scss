@@ -1,0 +1,48 @@
+//============================================================
+// Header Styles
+//============================================================
+
+//------------- Header ------------
+
+header {
+  @include display-flex(space-between);
+  height: 72px;
+  color: $color-text-inv-dark;
+  background-color: $color-header;
+  padding: 20px;
+  #company {
+    @include font-settings(1.2rem, 500);
+    margin: 0;
+    strong {
+      color: $color-text-inv-light;
+    }
+    span {
+      font-size: 1rem;
+    }
+  }
+  #user {
+    @include display-flex(flex-end);
+    #badge {
+      width: 44px;
+      padding-right: 20px;
+      border-right: $border;
+    }
+    #user-photo {
+      width: 32px;
+      height: 32px;
+      margin-left: 20px;
+      border-radius: 50%;
+      border: $border;
+    }
+    #user-name {
+      display: none;
+      @include tablet {
+        display: block;
+        @include font-settings(0.9rem, 300);
+        margin: 0;
+        padding-top: 4px;
+        padding-left: 10px;
+      }
+    }
+  }
+}
