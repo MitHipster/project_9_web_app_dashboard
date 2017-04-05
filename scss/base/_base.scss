@@ -8,5 +8,12 @@
 
 body {
   @extend %font-primary;
+  height: 100vh;
   background-color: $color-background;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

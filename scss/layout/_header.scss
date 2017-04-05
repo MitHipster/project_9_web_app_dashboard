@@ -11,13 +11,13 @@ header {
   background-color: $color-header;
   padding: 20px;
   #company {
-    @include font-settings(1.2rem, 500);
+    @include font-settings(1.3rem, 500);
     margin: 0;
     strong {
       color: $color-text-inv-light;
     }
     span {
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
   }
   #user {
@@ -38,7 +38,7 @@ header {
       display: none;
       @include tablet {
         display: block;
-        @include font-settings(0.9rem, 300);
+        @include font-settings(1rem, 300);
         margin: 0;
         padding-top: 4px;
         padding-left: 10px;

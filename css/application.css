@@ -8,7 +8,14 @@ body {
 
 /* line 9, ../scss/base/_base.scss */
 body {
+  height: 100vh;
   background-color: #f5f2e6; }
+
+/* line 15, ../scss/base/_base.scss */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
 
 /* line 7, ../scss/layout/_header.scss */
 header {
@@ -20,7 +27,7 @@ header {
   padding: 20px; }
   /* line 13, ../scss/layout/_header.scss */
   header #company {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 500;
     color: inherit;
     margin: 0; }
@@ -29,7 +36,7 @@ header {
       color: #f5f5f5; }
     /* line 19, ../scss/layout/_header.scss */
     header #company span {
-      font-size: 1rem; }
+      font-size: 1.1rem; }
   /* line 23, ../scss/layout/_header.scss */
   header #user {
     display: flex;
@@ -53,11 +60,36 @@ header {
         /* line 37, ../scss/layout/_header.scss */
         header #user #user-name {
           display: block;
-          font-size: 0.9rem;
+          font-size: 1rem;
           font-weight: 300;
           color: inherit;
           margin: 0;
           padding-top: 4px;
           padding-left: 10px; } }
+
+/* line 7, ../scss/layout/_navigation.scss */
+nav {
+  display: none; }
+  @media (min-width: 768px) {
+    /* line 7, ../scss/layout/_navigation.scss */
+    nav {
+      display: block;
+      width: 88px;
+      height: 100%;
+      background-color: #1d2d44;
+      padding-top: 10px; }
+      /* line 15, ../scss/layout/_navigation.scss */
+      nav a.nav-links {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        margin: 7px 12px;
+        padding: 16px;
+        opacity: 0.5;
+        transition: opacity .5s; }
+        /* line 23, ../scss/layout/_navigation.scss */
+        nav a.nav-links:hover, nav a.nav-links:focus {
+          opacity: 1;
+          outline-color: #f5f2e6; } }
 
 /*# sourceMappingURL=application.css.map */
