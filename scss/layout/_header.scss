@@ -10,39 +10,57 @@ header {
   color: $color-text-inv-dark;
   background-color: $color-header;
   padding: 20px;
+}
+
+#menu {
+  @include display-flex(flex-start);
+  a#menu-arrow {
+    @include icon-link(64px, 64px, -16px 0 0 -16px, 12px);
+  }
+  img#arrow {
+    display: inline-block;
+    transition: transform .7s;
+    &.rotate {
+      transform: rotate(180deg);
+    }
+  }
   #company {
-    @include font-settings(1.3rem, 500);
-    margin: 0;
+    @include font-settings(1.3rem, 300);
+    margin: -2px 0 0 20px;
     strong {
       color: $color-text-inv-light;
     }
     span {
-      font-size: 1.1rem;
+      @include font-settings(1rem, 300);
+      vertical-align: super;
     }
   }
-  #user {
-    @include display-flex(flex-end);
-    #badge {
-      width: 44px;
-      padding-right: 20px;
-      border-right: $border;
-    }
-    #user-photo {
-      width: 32px;
-      height: 32px;
-      margin-left: 20px;
-      border-radius: 50%;
-      border: $border;
-    }
-    #user-name {
-      display: none;
-      @include tablet {
-        display: block;
-        @include font-settings(1rem, 300);
-        margin: 0;
-        padding-top: 4px;
-        padding-left: 10px;
-      }
+}
+
+#user {
+  @include display-flex(flex-end);
+  a#user-notice {
+    @include icon-link(64px, 64px, -16px 0 0 -16px, 18px);
+  }
+  #user-photo {
+    width: 32px;
+    height: 32px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: $border;
+  }
+  #user-name {
+    display: none;
+    @include tablet {
+      display: block;
+      @include font-settings(1rem, 300);
+      margin: 0;
+      padding-top: 4px;
+      padding-left: 10px;
     }
   }
+}
+
+.vertical-line {
+  border-left: $border;
 }

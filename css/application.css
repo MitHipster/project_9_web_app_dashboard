@@ -25,47 +25,90 @@ header {
   color: #d3d3d3;
   background-color: #3e5c76;
   padding: 20px; }
-  /* line 13, ../scss/layout/_header.scss */
-  header #company {
+
+/* line 15, ../scss/layout/_header.scss */
+#menu {
+  display: flex;
+  justify-content: flex-start; }
+  /* line 17, ../scss/layout/_header.scss */
+  #menu a#menu-arrow {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: -16px 0 0 -16px;
+    padding: 12px;
+    opacity: 0.5;
+    transition: opacity .3s ease-out, transform .4s ease-out; }
+    /* line 31, ../scss/utilities/_mixins.scss */
+    #menu a#menu-arrow:hover, #menu a#menu-arrow:focus {
+      outline: 0 none;
+      opacity: 1;
+      transform: scale(1.15); }
+  /* line 20, ../scss/layout/_header.scss */
+  #menu img#arrow {
+    display: inline-block;
+    transition: transform .7s; }
+    /* line 23, ../scss/layout/_header.scss */
+    #menu img#arrow.rotate {
+      transform: rotate(180deg); }
+  /* line 27, ../scss/layout/_header.scss */
+  #menu #company {
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 300;
     color: inherit;
-    margin: 0; }
-    /* line 16, ../scss/layout/_header.scss */
-    header #company strong {
-      color: #f5f5f5; }
-    /* line 19, ../scss/layout/_header.scss */
-    header #company span {
-      font-size: 1.1rem; }
-  /* line 23, ../scss/layout/_header.scss */
-  header #user {
-    display: flex;
-    justify-content: flex-end; }
-    /* line 25, ../scss/layout/_header.scss */
-    header #user #badge {
-      width: 44px;
-      padding-right: 20px;
-      border-right: 1px solid; }
+    margin: -2px 0 0 20px; }
     /* line 30, ../scss/layout/_header.scss */
-    header #user #user-photo {
-      width: 32px;
-      height: 32px;
-      margin-left: 20px;
-      border-radius: 50%;
-      border: 1px solid; }
-    /* line 37, ../scss/layout/_header.scss */
-    header #user #user-name {
-      display: none; }
-      @media (min-width: 768px) {
-        /* line 37, ../scss/layout/_header.scss */
-        header #user #user-name {
-          display: block;
-          font-size: 1rem;
-          font-weight: 300;
-          color: inherit;
-          margin: 0;
-          padding-top: 4px;
-          padding-left: 10px; } }
+    #menu #company strong {
+      color: #f5f5f5; }
+    /* line 33, ../scss/layout/_header.scss */
+    #menu #company span {
+      font-size: 1rem;
+      font-weight: 300;
+      color: inherit;
+      vertical-align: super; }
+
+/* line 40, ../scss/layout/_header.scss */
+#user {
+  display: flex;
+  justify-content: flex-end; }
+  /* line 42, ../scss/layout/_header.scss */
+  #user a#user-notice {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: -16px 0 0 -16px;
+    padding: 18px;
+    opacity: 0.5;
+    transition: opacity .3s ease-out, transform .4s ease-out; }
+    /* line 31, ../scss/utilities/_mixins.scss */
+    #user a#user-notice:hover, #user a#user-notice:focus {
+      outline: 0 none;
+      opacity: 1;
+      transform: scale(1.15); }
+  /* line 45, ../scss/layout/_header.scss */
+  #user #user-photo {
+    width: 32px;
+    height: 32px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(211, 211, 211, 0.7); }
+  /* line 52, ../scss/layout/_header.scss */
+  #user #user-name {
+    display: none; }
+    @media (min-width: 768px) {
+      /* line 52, ../scss/layout/_header.scss */
+      #user #user-name {
+        display: block;
+        font-size: 1rem;
+        font-weight: 300;
+        color: inherit;
+        margin: 0;
+        padding-top: 4px;
+        padding-left: 10px; } }
+
+/* line 64, ../scss/layout/_header.scss */
+.vertical-line {
+  border-left: 1px solid rgba(211, 211, 211, 0.7); }
 
 /* line 7, ../scss/layout/_navigation.scss */
 nav {
@@ -80,16 +123,17 @@ nav {
       padding-top: 10px; }
       /* line 15, ../scss/layout/_navigation.scss */
       nav a.nav-links {
-        display: inline-block;
+        display: block;
         width: 64px;
         height: 64px;
         margin: 7px 12px;
         padding: 16px;
         opacity: 0.5;
-        transition: opacity .5s; }
-        /* line 23, ../scss/layout/_navigation.scss */
+        transition: opacity .3s ease-out, transform .4s ease-out; }
+        /* line 31, ../scss/utilities/_mixins.scss */
         nav a.nav-links:hover, nav a.nav-links:focus {
+          outline: 0 none;
           opacity: 1;
-          outline-color: #f5f2e6; } }
+          transform: scale(1.15); } }
 
 /*# sourceMappingURL=application.css.map */

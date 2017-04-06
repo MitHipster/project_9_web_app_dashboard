@@ -18,6 +18,26 @@
 
 
 
+// Icon link settings
+
+@mixin icon-link($width, $height, $margin, $padding, $opacity: 0.5) {
+  display: block;
+  width: $width;
+  height: $height;
+  margin: $margin;
+  padding: $padding;
+  opacity: $opacity;
+  transition: opacity .3s ease-out, transform .4s ease-out;
+  &:hover,
+  &:focus {
+    outline: 0 none;
+    opacity: 1;
+    transform: scale(1.15);
+  } 
+}
+
+
+
 // Media queries
 
 @mixin tablet {
