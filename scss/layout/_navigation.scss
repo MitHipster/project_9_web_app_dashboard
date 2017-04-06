@@ -8,14 +8,12 @@ nav {
 //  display: none;
   position: absolute;
   width: 88px;
-  @include tablet {
-    display: block;
-    width: 88px;
-    height: 100%;
-    background-color: $color-nav;
-    padding-top: 10px;
-    a.nav-links {
-      @include icon-link(64px, 64px, 12px, 16px);
-    }
+//  display: block;
+  width: 88px;
+  height: 100%;
+  background-color: $color-nav;
+  padding-top: 10px;
+  a.nav-links {
+    @include icon-link(64px, 64px, 12px, 16px);
   }
 }

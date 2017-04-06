@@ -9,24 +9,30 @@ header {
   height: 72px;
   color: $color-text-inv-dark;
   background-color: $color-header;
-  padding: 20px;
+  padding: 20px 15px 20px 5px;
+  @include tablet {
+    padding: 20px 25px 20px 15px;
+  }
 }
 
 #menu {
   @include display-flex(flex-start);
   a#menu-arrow {
-    @include icon-link(64px, 64px, -16px 0 0 -16px, 12px);
+    @include icon-link(56px, 64px, -16px -4px 0 -8px, 12px 8px);
+    @include tablet {
+      @include icon-link(64px, 64px, -16px 0 0 -16px, 12px);
+    }
   }
   img#arrow {
     display: inline-block;
-    transition: transform .7s;
+    transition: transform .5s;
     &.rotate {
       transform: rotate(180deg);
     }
   }
   #company {
     @include font-settings(1.3rem, 300);
-    margin: -2px 0 0 20px;
+    margin: -2px 0 0 15px;
     strong {
       color: $color-text-inv-light;
     }
@@ -34,20 +40,29 @@ header {
       @include font-settings(1rem, 300);
       vertical-align: super;
     }
+    @include tablet {
+      margin-left: 20px;
+    }
   }
 }
 
 #user {
   @include display-flex(flex-end);
   a#user-notice {
-    @include icon-link(64px, 64px, -16px 0 0 -16px, 18px);
+    @include icon-link(56px, 64px, -16px 0 0 -8px, 18px 14px);
+    @include tablet {
+      @include icon-link(64px, 64px, -16px 0 0 -16px, 18px);
+    }
   }
   #user-photo {
     width: 32px;
     height: 32px;
-    margin-left: 20px;
+    margin-left: 15px;
     border-radius: 50%;
     border: $border;
+    @include tablet{
+      margin-left: 20px;
+    }
   }
   #user-name {
     display: none;

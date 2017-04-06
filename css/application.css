@@ -25,19 +25,23 @@ header {
   height: 72px;
   color: #d3d3d3;
   background-color: #3e5c76;
-  padding: 20px; }
+  padding: 20px 15px 20px 5px; }
+  @media (min-width: 768px) {
+    /* line 7, ../scss/layout/_header.scss */
+    header {
+      padding: 20px 25px 20px 15px; } }
 
-/* line 15, ../scss/layout/_header.scss */
+/* line 18, ../scss/layout/_header.scss */
 #menu {
   display: flex;
   justify-content: flex-start; }
-  /* line 17, ../scss/layout/_header.scss */
+  /* line 20, ../scss/layout/_header.scss */
   #menu a#menu-arrow {
     display: block;
-    width: 64px;
+    width: 56px;
     height: 64px;
-    margin: -16px 0 0 -16px;
-    padding: 12px;
+    margin: -16px -4px 0 -8px;
+    padding: 12px 8px;
     opacity: 0.5;
     transition: opacity .3s ease-out, transform .4s ease-out; }
     /* line 31, ../scss/utilities/_mixins.scss */
@@ -45,40 +49,59 @@ header {
       outline: 0 none;
       opacity: 1;
       transform: scale(1.15); }
-  /* line 20, ../scss/layout/_header.scss */
+    @media (min-width: 768px) {
+      /* line 20, ../scss/layout/_header.scss */
+      #menu a#menu-arrow {
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: -16px 0 0 -16px;
+        padding: 12px;
+        opacity: 0.5;
+        transition: opacity .3s ease-out, transform .4s ease-out; }
+        /* line 31, ../scss/utilities/_mixins.scss */
+        #menu a#menu-arrow:hover, #menu a#menu-arrow:focus {
+          outline: 0 none;
+          opacity: 1;
+          transform: scale(1.15); } }
+  /* line 26, ../scss/layout/_header.scss */
   #menu img#arrow {
     display: inline-block;
-    transition: transform .7s; }
-    /* line 23, ../scss/layout/_header.scss */
+    transition: transform .5s; }
+    /* line 29, ../scss/layout/_header.scss */
     #menu img#arrow.rotate {
       transform: rotate(180deg); }
-  /* line 27, ../scss/layout/_header.scss */
+  /* line 33, ../scss/layout/_header.scss */
   #menu #company {
     font-size: 1.3rem;
     font-weight: 300;
     color: inherit;
-    margin: -2px 0 0 20px; }
-    /* line 30, ../scss/layout/_header.scss */
+    margin: -2px 0 0 15px; }
+    /* line 36, ../scss/layout/_header.scss */
     #menu #company strong {
       color: #f5f5f5; }
-    /* line 33, ../scss/layout/_header.scss */
+    /* line 39, ../scss/layout/_header.scss */
     #menu #company span {
       font-size: 1rem;
       font-weight: 300;
       color: inherit;
       vertical-align: super; }
+    @media (min-width: 768px) {
+      /* line 33, ../scss/layout/_header.scss */
+      #menu #company {
+        margin-left: 20px; } }
 
-/* line 40, ../scss/layout/_header.scss */
+/* line 49, ../scss/layout/_header.scss */
 #user {
   display: flex;
   justify-content: flex-end; }
-  /* line 42, ../scss/layout/_header.scss */
+  /* line 51, ../scss/layout/_header.scss */
   #user a#user-notice {
     display: block;
-    width: 64px;
+    width: 56px;
     height: 64px;
-    margin: -16px 0 0 -16px;
-    padding: 18px;
+    margin: -16px 0 0 -8px;
+    padding: 18px 14px;
     opacity: 0.5;
     transition: opacity .3s ease-out, transform .4s ease-out; }
     /* line 31, ../scss/utilities/_mixins.scss */
@@ -86,18 +109,37 @@ header {
       outline: 0 none;
       opacity: 1;
       transform: scale(1.15); }
-  /* line 45, ../scss/layout/_header.scss */
+    @media (min-width: 768px) {
+      /* line 51, ../scss/layout/_header.scss */
+      #user a#user-notice {
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: -16px 0 0 -16px;
+        padding: 18px;
+        opacity: 0.5;
+        transition: opacity .3s ease-out, transform .4s ease-out; }
+        /* line 31, ../scss/utilities/_mixins.scss */
+        #user a#user-notice:hover, #user a#user-notice:focus {
+          outline: 0 none;
+          opacity: 1;
+          transform: scale(1.15); } }
+  /* line 57, ../scss/layout/_header.scss */
   #user #user-photo {
     width: 32px;
     height: 32px;
-    margin-left: 20px;
+    margin-left: 15px;
     border-radius: 50%;
     border: 1px solid rgba(211, 211, 211, 0.7); }
-  /* line 52, ../scss/layout/_header.scss */
+    @media (min-width: 768px) {
+      /* line 57, ../scss/layout/_header.scss */
+      #user #user-photo {
+        margin-left: 20px; } }
+  /* line 67, ../scss/layout/_header.scss */
   #user #user-name {
     display: none; }
     @media (min-width: 768px) {
-      /* line 52, ../scss/layout/_header.scss */
+      /* line 67, ../scss/layout/_header.scss */
       #user #user-name {
         display: block;
         font-size: 1rem;
@@ -107,7 +149,7 @@ header {
         padding-top: 4px;
         padding-left: 10px; } }
 
-/* line 64, ../scss/layout/_header.scss */
+/* line 79, ../scss/layout/_header.scss */
 .vertical-line {
   border-left: 1px solid rgba(211, 211, 211, 0.7); }
 
@@ -119,29 +161,25 @@ header {
 /* line 7, ../scss/layout/_navigation.scss */
 nav {
   position: absolute;
-  width: 88px; }
-  @media (min-width: 768px) {
-    /* line 7, ../scss/layout/_navigation.scss */
-    nav {
-      display: block;
-      width: 88px;
-      height: 100%;
-      background-color: #1d2d44;
-      padding-top: 10px; }
-      /* line 17, ../scss/layout/_navigation.scss */
-      nav a.nav-links {
-        display: block;
-        width: 64px;
-        height: 64px;
-        margin: 12px;
-        padding: 16px;
-        opacity: 0.5;
-        transition: opacity .3s ease-out, transform .4s ease-out; }
-        /* line 31, ../scss/utilities/_mixins.scss */
-        nav a.nav-links:hover, nav a.nav-links:focus {
-          outline: 0 none;
-          opacity: 1;
-          transform: scale(1.15); } }
+  width: 88px;
+  width: 88px;
+  height: 100%;
+  background-color: #1d2d44;
+  padding-top: 10px; }
+  /* line 16, ../scss/layout/_navigation.scss */
+  nav a.nav-links {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 12px;
+    padding: 16px;
+    opacity: 0.5;
+    transition: opacity .3s ease-out, transform .4s ease-out; }
+    /* line 31, ../scss/utilities/_mixins.scss */
+    nav a.nav-links:hover, nav a.nav-links:focus {
+      outline: 0 none;
+      opacity: 1;
+      transform: scale(1.15); }
 
 /* line 7, ../scss/layout/_main.scss */
 main {
@@ -149,7 +187,7 @@ main {
   padding: 20px;
   background: #f5f2e6;
   transform: translate3d(0, 0, 0);
-  transition: transform .3s; }
+  transition: transform .5s; }
   /* line 13, ../scss/layout/_main.scss */
   main.slide-right {
     transform: translate3d(88px, 0, 0); }
