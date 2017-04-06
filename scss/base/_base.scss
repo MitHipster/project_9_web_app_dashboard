@@ -2,7 +2,7 @@
 // Base Element Styles
 //============================================================
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -10,6 +10,7 @@ body {
   @extend %font-primary;
   height: 100vh;
   background-color: $color-background;
+  overflow-x: hidden;
 }
 
 ul {
