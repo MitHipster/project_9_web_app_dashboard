@@ -8,3 +8,15 @@
   @include display-flex;
   height: 100vh;
 }
+
+input {
+  border: $border;
+  border-radius: 4px;
+  padding: 8px 16px;
+  background-color: $light-gray;
+  transition: background-color .5s ease-out;
+}
+
+input:focus {
+  background-color: $smoke-white;
+}
