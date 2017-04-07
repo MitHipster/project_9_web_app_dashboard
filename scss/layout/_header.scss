@@ -7,12 +7,16 @@
 header {
   @include display-flex(space-between);
   height: 72px;
-  color: $color-text-inv-dark;
   background-color: $color-header;
+  color: $color-text-inv-dark;
   padding: 20px 15px 20px 5px;
   @include tablet {
     padding: 20px 25px 20px 15px;
   }
+}
+
+.vertical-line {
+  border-left: $border;
 }
 
 #menu {
@@ -20,7 +24,7 @@ header {
   a#menu-arrow {
     @include icon-link(56px, 64px, -16px -4px 0 -8px, 12px 8px);
     @include tablet {
-      @include icon-link(64px, 64px, -16px 0 0 -16px, 12px);
+      display: none;
     }
   }
   img#arrow {
@@ -28,6 +32,11 @@ header {
     transition: transform .5s;
     &.rotate {
       transform: rotate(180deg);
+    }
+  }
+  .vertical-line {
+    @include tablet {
+      display: none;
     }
   }
   #company {
@@ -41,7 +50,7 @@ header {
       vertical-align: super;
     }
     @include tablet {
-      margin-left: 20px;
+      margin-left: 10px;
     }
   }
 }
@@ -68,14 +77,9 @@ header {
     display: none;
     @include tablet {
       display: block;
-      @include font-settings(1rem, 300);
       margin: 0;
       padding-top: 4px;
       padding-left: 10px;
     }
   }
-}
-
-.vertical-line {
-  border-left: $border;
 }

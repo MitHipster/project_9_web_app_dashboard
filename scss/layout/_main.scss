@@ -6,11 +6,11 @@
 
 main {
   flex: 1;
-  padding: 20px;
+  padding: 0 20px 80px;
   background: $color-background;
-  transform: translate3d(0, 0, 0);
+  transform: translateX(0);
   transition: transform .5s;
   &.slide-right {
-    transform: translate3d(88px, 0, 0);
+    transform: translateX(88px);
   }
 }
