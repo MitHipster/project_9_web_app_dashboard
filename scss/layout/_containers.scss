@@ -2,21 +2,16 @@
 // Container Styles
 //============================================================
 
-//--------------- Outer ---------------
+//------------- Outer -------------
 
 .outer-container {
   @include display-flex;
-  height: 100vh;
+  min-height: 100%;
 }
 
-input {
-  border: $border;
-  border-radius: 4px;
-  padding: 8px 16px;
-  background-color: $light-gray;
-  transition: background-color .5s ease-out;
-}
-
-input:focus {
-  background-color: $smoke-white;
+.inner-container {
+  padding: 0 $mobile-LR;
+  @include tablet {
+    padding: 0 $tablet-LR;
+  }
 }

@@ -16,7 +16,7 @@ header {
 }
 
 .vertical-line {
-  border-left: $border;
+  border-left: $border-hdr;
 }
 
 #menu {
@@ -46,7 +46,7 @@ header {
       color: $color-text-inv-light;
     }
     span {
-      @include font-settings(1rem, 300);
+      @include font-settings(0.9rem, 300);
       vertical-align: super;
     }
     @include tablet {
