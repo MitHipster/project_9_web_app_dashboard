@@ -184,11 +184,12 @@ header {
   min-height: 100%; }
 
 /* line 16, ../scss/layout/_containers.scss */
-.inner-container {
+.line-chart-container {
+  border-bottom: 1px solid rgba(116, 140, 171, 0.5);
   padding: 0 15px; }
   @media (min-width: 768px) {
     /* line 16, ../scss/layout/_containers.scss */
-    .inner-container {
+    .line-chart-container {
       padding: 0 20px; } }
 
 /* line 7, ../scss/layout/_search.scss */
@@ -246,40 +247,54 @@ header {
     height: 40px;
     border-radius: 4px; }
 
-/* line 7, ../scss/layout/_charts.scss */
+/* line 5, ../scss/layout/_charts.scss */
 .chart-title {
-  display: flex;
-  justify-content: space-between;
+  padding-bottom: 10px;
   font-size: 1rem;
   font-weight: 500;
   color: #696969;
   text-transform: uppercase; }
-
-/* line 13, ../scss/layout/_charts.scss */
-#line-chart {
-  width: 100% !important;
-  height: 225px !important; }
   @media (min-width: 480px) {
-    /* line 13, ../scss/layout/_charts.scss */
-    #line-chart {
-      height: 250px !important; } }
-  @media (min-width: 768px) {
-    /* line 13, ../scss/layout/_charts.scss */
-    #line-chart {
-      height: 300px !important; } }
+    /* line 5, ../scss/layout/_charts.scss */
+    .chart-title {
+      padding-bottom: 0; } }
 
-/* line 24, ../scss/layout/_charts.scss */
+/* line 18, ../scss/layout/_charts.scss */
+.line-chart-options {
+  padding-top: 20px; }
+  @media (min-width: 480px) {
+    /* line 18, ../scss/layout/_charts.scss */
+    .line-chart-options {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 30px; } }
+
+/* line 26, ../scss/layout/_charts.scss */
 .line-chart-timescale {
   display: flex;
-  justify-content: flex-end;
-  align-items: center; }
-  /* line 26, ../scss/layout/_charts.scss */
+  justify-content: flex-end; }
+  /* line 28, ../scss/layout/_charts.scss */
   .line-chart-timescale button {
     width: 68px;
     height: 24px;
     background-color: #1fad3b;
     border-radius: 15px;
     margin-left: 5px; }
+
+/* line 38, ../scss/layout/_charts.scss */
+canvas#line-chart {
+  width: 100% !important;
+  height: calc(225px + 20px) !important;
+  padding-bottom: 20px; }
+  @media (min-width: 480px) {
+    /* line 38, ../scss/layout/_charts.scss */
+    canvas#line-chart {
+      height: calc(250px + 30px) !important;
+      padding-bottom: 30px; } }
+  @media (min-width: 768px) {
+    /* line 38, ../scss/layout/_charts.scss */
+    canvas#line-chart {
+      height: calc(300px + 30px) !important; } }
 
 /* line 7, ../scss/layout/_navigation.scss */
 nav {

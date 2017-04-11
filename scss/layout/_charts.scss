@@ -2,27 +2,29 @@
 // Chart Styles
 //============================================================
 
-//----------- Line Chart ----------
-
 .chart-title {
-  @include display-flex(space-between);
+  padding-bottom: 10px;
   @include font-settings(1rem, 500, $color-text-light);
   text-transform: uppercase;
+  @include mobile {
+    padding-bottom: 0;
+  }
 }
 
-#line-chart {
-  width: 100% !important;
-  height: 225px !important;
+
+
+//----------- Line Chart ----------
+
+.line-chart-options {
+  padding-top: 20px;
   @include mobile {
-    height: 250px !important;
-  }
-  @include tablet {
-    height: 300px !important;
+    @include display-flex(space-between);
+    padding-top: 30px;
   }
 }
 
 .line-chart-timescale {
-  @include display-flex(flex-end, center);
+  @include display-flex(flex-end);
   button {
 //  display: none;
     width: 68px;
@@ -32,3 +34,17 @@
     margin-left: 5px;
   }
 }
+
+canvas#line-chart {
+  width: 100% !important;
+  height: calc(225px + 20px) !important;
+  padding-bottom: 20px;
+  @include mobile {
+    height: calc(250px + 30px) !important;
+    padding-bottom: 30px;
+  }
+  @include tablet {
+    height: calc(300px + 30px) !important;
+  }
+}
+

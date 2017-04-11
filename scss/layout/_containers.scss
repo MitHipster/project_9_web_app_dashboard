@@ -13,7 +13,8 @@
 
 //------------- Inner -------------
 
-.inner-container {
+.line-chart-container {
+  border-bottom: $border;
   padding: 0 $mobile-edge;
   @include tablet {
     padding: 0 $tablet-edge;
