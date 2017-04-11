@@ -37,7 +37,7 @@
 
       <main role="main">
         <div class="title-container">
-          <h2>Dashboard</h2>
+          <h2 id="page-title">Dashboard</h2>
           <div class="search-container">
             <input type="search" id="search" name="search" aria-label="Search" placeholder="Search">
             <button type="button" id="search-btn" name="search-btn">
@@ -45,26 +45,24 @@
             </button>
           </div>
         </div>
-        <div class="inner-container">
-          <div class="line-chart-container">
-            <div class="line-chart-options">
-              <h3 class="chart-title">Traffic</h3>
-              <div class="line-chart-timescale">
-                <button type="button" id="hourly-btn" name="hourly-btn">Hourly</button>
-                <button type="button" id="daily-btn" name="daily-btn">Daily</button>
-                <button class="active" type="button" id="weekly-btn" name="weekly-btn">Weekly</button>
-                <button type="button" id="monthly-btn" name="monthly-btn">Monthly</button>
-              </div>
+          <div class="line-chart-options">
+            <h3 class="chart-title">Traffic</h3>
+            <div class="line-chart-timescale">
+              <button type="button" id="hourly-btn" name="hourly-btn">Hourly</button>
+              <button type="button" id="daily-btn" name="daily-btn">Daily</button>
+              <button class="active" type="button" id="weekly-btn" name="weekly-btn">Weekly</button>
+              <button type="button" id="monthly-btn" name="monthly-btn">Monthly</button>
             </div>
-            <canvas id="line-chart"></canvas>
           </div>
-
-          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
-
-          <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
-
-          <p>Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+        <div class="line-chart-container">
+          <canvas id="line-chart"></canvas>
         </div>
+
+        <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+
+        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
+
+        <p>Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
       </main>
     </div>
     

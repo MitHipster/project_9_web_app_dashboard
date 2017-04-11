@@ -4,6 +4,17 @@
 
 //-------- Search Container -------
   
+#page-title {
+  @include font-settings(1.1rem, 400);
+  line-height: 64px;
+  width: 95px;
+  border-right: $border;
+  @include tablet {
+    @include font-settings(1.4rem, 400);
+    width: 120px;
+  }
+}
+
 .search-container {
   position: relative;
   @include display-flex (flex-end, center);

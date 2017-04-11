@@ -13,7 +13,6 @@ $(document).ready( () => {
 // Global chart defaults
 const colorMain = '#3e5c76';
 const colorAccent = '#f5f5f5';
-//const fontStack = "'Catamaran', sans-serif";
 const fontStack = "'Open Sans', sans-serif";
 const fontColor = '#696969';
 const fontSize = 13;
