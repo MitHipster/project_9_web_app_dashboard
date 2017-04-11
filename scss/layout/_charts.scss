@@ -1,0 +1,34 @@
+//============================================================
+// Chart Styles
+//============================================================
+
+//----------- Line Chart ----------
+
+.chart-title {
+  @include display-flex(space-between);
+  @include font-settings(1rem, 500, $color-text-light);
+  text-transform: uppercase;
+}
+
+#line-chart {
+  width: 100% !important;
+  height: 225px !important;
+  @include mobile {
+    height: 250px !important;
+  }
+  @include tablet {
+    height: 300px !important;
+  }
+}
+
+.line-chart-timescale {
+  @include display-flex(flex-end, center);
+  button {
+//  display: none;
+    width: 68px;
+    height: 24px;
+    background-color: $color-btn-background;
+    border-radius: 15px;
+    margin-left: 5px;
+  }
+}

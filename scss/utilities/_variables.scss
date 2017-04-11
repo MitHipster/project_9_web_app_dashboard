@@ -13,6 +13,8 @@ $smoke-white    : #f5f5f5;
 
 $bermuda-gray   : #748cab;
 
+$forest-green   : #1fad3b;
+
 
 
 // Functional color variables
@@ -30,6 +32,8 @@ $color-text-inv-light : $smoke-white;
 
 $color-border         : $bermuda-gray;
 
+$color-btn-background : $forest-green;
+
 $color-link-active    : $alabaster;
 
 
@@ -42,8 +46,8 @@ $stack-catamaran    : 'Catamaran', sans-serif;
 
 // Margin and padding
 
-$mobile-LR    : 15px;
-$tablet-LR    : 20px;
+$mobile-edge    : 15px;
+$tablet-edge    : 20px;
 
 
 
@@ -56,5 +60,6 @@ $border       : 1px solid rgba($color-border, 0.5);
 
 // Media query breakpoints
 
-$tablet-width   : 768px;
-$desktop-width  : 1024px;
+$mobile-width      : 480px;
+$tablet-width      : 768px;
+$desktop-width     : 1024px;

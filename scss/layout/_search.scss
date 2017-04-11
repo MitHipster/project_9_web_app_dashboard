@@ -6,9 +6,9 @@
 
 .title-container {
   height: 64px;
-  padding: 0 $mobile-LR;
+  padding: 0 $mobile-edge;
   @include tablet {
-    padding: 0 $tablet-LR;
+    padding: 0 $tablet-edge;
   }
   @include display-flex (flex-start, center);
   #page-title {
@@ -22,17 +22,18 @@
     }
   }
   .search-container {
+    position: relative;
     @include display-flex (flex-end, center);
-    width: calc(100% - 95px + #{$mobile-LR});
+    width: calc(100% - 95px + #{$mobile-edge});
     height: 64px;
     background-color: $color-tab;
-    margin-right: -#{$mobile-LR};
-    padding-right: $mobile-LR;
+    margin-right: -#{$mobile-edge};
+    padding-right: $mobile-edge;
     border-bottom: $border;
     @include tablet {
-      width: calc(100% - 120px + #{$tablet-LR});
-      margin-right: -#{$tablet-LR};
-      padding-right: $tablet-LR;
+      width: calc(100% - 120px + #{$tablet-edge});
+      margin-right: -#{$tablet-edge};
+      padding-right: $tablet-edge;
     }
   }
   #search {
@@ -40,9 +41,9 @@
     max-width: 375px;
   }
   #search-btn {
-    width: 32px;
-    height: 32px;
-    background: none;
-    border: none;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
   }
 }

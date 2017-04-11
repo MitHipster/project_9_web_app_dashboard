@@ -5,7 +5,7 @@
     <title>WEBanalytics Dashboard</title>
     <meta name="author" content="Tim Acker">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,300,400,500|Open+Sans:400" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="css/application.css">
 
@@ -46,7 +46,18 @@
           </div>
         </div>
         <div class="inner-container">
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+          <div class="line-chart-container">
+            <div class="line-chart-options">
+              <h3 class="chart-title">Traffic</h3>
+              <div class="line-chart-timescale">
+                <button type="button" id="hourly-btn" name="hourly-btn">Hourly</button>
+                <button type="button" id="daily-btn" name="daily-btn">Daily</button>
+                <button class="active" type="button" id="weekly-btn" name="weekly-btn">Weekly</button>
+                <button type="button" id="monthly-btn" name="monthly-btn">Monthly</button>
+              </div>
+            </div>
+            <canvas id="line-chart"></canvas>
+          </div>
 
           <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
 

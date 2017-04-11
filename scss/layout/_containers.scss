@@ -9,9 +9,14 @@
   min-height: 100%;
 }
 
+
+
+//------------- Inner -------------
+
 .inner-container {
-  padding: 0 $mobile-LR;
+  padding: 0 $mobile-edge;
   @include tablet {
-    padding: 0 $tablet-LR;
+    padding: 0 $tablet-edge;
   }
 }
+
