@@ -11,7 +11,20 @@
 
 
 
-//------------- Inner -------------
+//-------------- Title ------------
+
+.title-container {
+  @include display-flex (flex-start, center);
+  height: 64px;
+  padding: 0 $mobile-edge;
+  @include tablet {
+    padding: 0 $tablet-edge;
+  }
+}
+
+
+
+//----------- Line Chart ----------
 
 .line-chart-container {
   border-bottom: $border;

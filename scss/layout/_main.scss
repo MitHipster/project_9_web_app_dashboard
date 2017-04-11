@@ -6,14 +6,11 @@
 
 main {
   flex: 1;
-  width: calc(100% - #{$mobile-edge});
+  width: 100%;
   background: $color-background;
   transform: translateX(0);
   transition: transform .5s;
   &.slide-right {
     transform: translateX(88px);
-  }
-  @include tablet {
-    width: calc(100% - 88px - #{$mobile-edge});
   }
 }

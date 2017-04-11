@@ -38,13 +38,29 @@ ul {
   list-style: none; }
 
 /* line 30, ../scss/base/_base.scss */
+h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: inherit;
+  line-height: 64px;
+  width: 95px;
+  border-right: 1px solid rgba(116, 140, 171, 0.5); }
+  @media (min-width: 768px) {
+    /* line 30, ../scss/base/_base.scss */
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: inherit;
+      width: 120px; } }
+
+/* line 41, ../scss/base/_base.scss */
 input {
   border: 1px solid rgba(116, 140, 171, 0.5);
   border-radius: 4px;
   padding: 5px 15px;
   background-color: #f5f5f5; }
 
-/* line 39, ../scss/base/_base.scss */
+/* line 50, ../scss/base/_base.scss */
 button {
   font-size: 0.9rem;
   font-weight: 400;
@@ -184,64 +200,50 @@ header {
   min-height: 100%; }
 
 /* line 16, ../scss/layout/_containers.scss */
+.title-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 64px;
+  padding: 0 15px; }
+  @media (min-width: 768px) {
+    /* line 16, ../scss/layout/_containers.scss */
+    .title-container {
+      padding: 0 20px; } }
+
+/* line 29, ../scss/layout/_containers.scss */
 .line-chart-container {
   border-bottom: 1px solid rgba(116, 140, 171, 0.5);
   padding: 0 15px; }
   @media (min-width: 768px) {
-    /* line 16, ../scss/layout/_containers.scss */
+    /* line 29, ../scss/layout/_containers.scss */
     .line-chart-container {
       padding: 0 20px; } }
 
 /* line 7, ../scss/layout/_search.scss */
-.title-container {
-  height: 64px;
-  padding: 0 15px;
+.search-container {
+  position: relative;
   display: flex;
-  justify-content: flex-start;
-  align-items: center; }
+  justify-content: flex-end;
+  align-items: center;
+  width: calc(100% - 95px + 15px);
+  height: 64px;
+  background-color: #e7e7e7;
+  margin-right: -15px;
+  padding-right: 15px;
+  border-bottom: 1px solid rgba(116, 140, 171, 0.5); }
   @media (min-width: 768px) {
     /* line 7, ../scss/layout/_search.scss */
-    .title-container {
-      padding: 0 20px; } }
-  /* line 14, ../scss/layout/_search.scss */
-  .title-container #page-title {
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: inherit;
-    line-height: 64px;
-    width: 95px;
-    border-right: 1px solid rgba(116, 140, 171, 0.5); }
-    @media (min-width: 768px) {
-      /* line 14, ../scss/layout/_search.scss */
-      .title-container #page-title {
-        font-size: 1.4rem;
-        font-weight: 400;
-        color: inherit;
-        width: 120px; } }
-  /* line 24, ../scss/layout/_search.scss */
-  .title-container .search-container {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: calc(100% - 95px + 15px);
-    height: 64px;
-    background-color: #e7e7e7;
-    margin-right: -15px;
-    padding-right: 15px;
-    border-bottom: 1px solid rgba(116, 140, 171, 0.5); }
-    @media (min-width: 768px) {
-      /* line 24, ../scss/layout/_search.scss */
-      .title-container .search-container {
-        width: calc(100% - 120px + 20px);
-        margin-right: -20px;
-        padding-right: 20px; } }
-  /* line 39, ../scss/layout/_search.scss */
-  .title-container #search {
+    .search-container {
+      width: calc(100% - 120px + 20px);
+      margin-right: -20px;
+      padding-right: 20px; } }
+  /* line 21, ../scss/layout/_search.scss */
+  .search-container #search {
     width: 75%;
     max-width: 375px; }
-  /* line 43, ../scss/layout/_search.scss */
-  .title-container #search-btn {
+  /* line 25, ../scss/layout/_search.scss */
+  .search-container #search-btn {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -323,16 +325,12 @@ nav {
 /* line 7, ../scss/layout/_main.scss */
 main {
   flex: 1;
-  width: calc(100% - 15px);
+  width: 100%;
   background: #f5f2e6;
   transform: translateX(0);
   transition: transform .5s; }
   /* line 13, ../scss/layout/_main.scss */
   main.slide-right {
     transform: translateX(88px); }
-  @media (min-width: 768px) {
-    /* line 7, ../scss/layout/_main.scss */
-    main {
-      width: calc(100% - 88px - 15px); } }
 
 /*# sourceMappingURL=application.css.map */
