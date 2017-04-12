@@ -1,5 +1,5 @@
 /*jslint esversion: 6, browser: true*/
-/*global window, $, jQuery, Chart, alert*/
+/*global window, console, $, jQuery, Chart, alert*/
 
 // Make sure document is loaded and in the ready state before js executes
 $(document).ready( () => {
@@ -12,6 +12,14 @@ $(document).ready( () => {
   // On click event for line chart buttons to switch labels and datasets based timescale selected
   $('.line-chart-timescale').on('click', 'button', function () {
     lineTimescale = $(this).attr('value');
+    $('.line-chart-timescale button').each( function (i) {
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
+    lineChart.data.labels = lineLabels[lineTimescale];
+    lineChart.data.datasets[0].data = lineData[lineTimescale];
+    lineChart.options.scales.yAxes[0].ticks.max = lineTicksMax[lineTimescale];
+    lineChart.options.scales.yAxes[0].ticks.stepSize = lineTicksStepSize[lineTimescale];
     lineChart.update();
   });
 });
@@ -41,7 +49,7 @@ const lineBorder = colorMain;
 
 const lineLabels = {
   hourly: ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"],
-  daily: ["W", "Th", "F", "Sat", "Sun", "M", "Tu", "W", "Th", "F", "Sat"],
+  daily: ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
   weekly: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
   monthly: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"]
 };

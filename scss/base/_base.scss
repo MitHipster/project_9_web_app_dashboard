@@ -33,7 +33,7 @@ input {
   padding: 5px 15px;
   background-color: $smoke-white;
   @extend %transition-state;
-  @extend %focus-state;
+  @extend %focus-state-input;
 }
 
 button {
@@ -42,5 +42,5 @@ button {
   border: none;
   border-radius: 4px;
   @extend %transition-state;
-  @extend %focus-state;
+  @extend %focus-state-btn;
 }
