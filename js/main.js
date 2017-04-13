@@ -32,6 +32,7 @@ $(document).ready( () => {
 // Global chart defaults
 const colorMain = '#3e5c76';
 const colorAccent = '#f5f5f5';
+const colorFill = 'rgba(62, 92, 118, 0.4)'; // $deep-space (#3e5c76)
 const fontStack = "'Open Sans', sans-serif";
 const fontColor = '#696969';
 const fontSize = 13;
@@ -43,7 +44,7 @@ Chart.defaults.global.defaultFontSize = fontSize;
 
 Chart.defaults.global.maintainAspectRatio = false;
 
-Chart.defaults.global.tooltips.backgroundColor = 'rgba(29, 45, 68, 0.6)'; // $yankees-blue
+Chart.defaults.global.tooltips.backgroundColor = 'rgba(29, 45, 68, 0.8)'; // $yankees-blue
 Chart.defaults.global.tooltips.bodyFontColor = colorAccent; //
 Chart.defaults.global.tooltips.titleFontColor = colorAccent; //
 Chart.defaults.global.tooltips.cornerRadius = 4; //
@@ -53,11 +54,7 @@ Chart.defaults.global.title.display = true;
 
 Chart.defaults.scale.ticks.beginAtZero = true;
 
-// Line chart variables
-const LINE_CHART = $('#line-chart');
-const lineFill = 'rgba(62, 92, 118, 0.4)'; // $deep-space (#3e5c76)
-const lineBorder = colorMain;
-
+// Line chart data and variables
 const lineLabels = {
   hourly: ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"],
   daily: ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
@@ -66,7 +63,7 @@ const lineLabels = {
 };
 const lineData = {
   hourly: [25, 30, 15, 35, 20, 45, 20, 15, 35, 15, 20],
-  daily: [225, 350, 300, 150, 100, 450, 300, 250, 400, 350, 200],
+  daily: [225, 350, 300, 150, 250, 450, 300, 250, 400, 350, 200],
   weekly: [500, 1000, 750, 1250, 1750, 1250, 1000, 1500, 2000, 1500, 2000],
   monthly: [6000, 7250, 6000, 6500, 5750, 4250, 4000, 3500, 4500, 7250, 8000]
 };
@@ -85,6 +82,8 @@ const lineTicksStepSize = {
 
 var lineTimescale = 'weekly';
 
+// Line chart constructor
+const LINE_CHART = $('.line-chart');
 let lineChart = new Chart(LINE_CHART, {
   type: 'line',
   data: {
@@ -93,10 +92,10 @@ let lineChart = new Chart(LINE_CHART, {
       {
         data: lineData[lineTimescale],
         fill: true,
-        lineTension: 0,
-        backgroundColor: lineFill,
+        lineTension: 0.1,
+        backgroundColor: colorFill,
         borderWidth: 1,
-        borderColor: lineBorder,
+        borderColor: colorMain,
         pointBackgroundColor: colorAccent,
         pointBorderWidth: 2,
         pointRadius: 5,
@@ -105,7 +104,6 @@ let lineChart = new Chart(LINE_CHART, {
         pointHoverBackgroundColor: colorMain,
         pointHoverBorderColor: colorAccent,
         pointHoverBorderWidth: 2,
-        spanGaps: true,
       }
     ]
   },
@@ -120,3 +118,39 @@ let lineChart = new Chart(LINE_CHART, {
     }
   }
 });
+
+// Line chart data and variables
+const barLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const barData = [250, 450, 300, 250, 400, 350, 200];
+const barTicksMax = 500;
+const barTicksStepSize = 100;
+
+// Bar chart constructor
+const BAR_CHART = $('.bar-chart');
+let barChart = new Chart(BAR_CHART, {
+  type: 'bar',
+  data: {
+    labels: barLabels,
+    datasets: [
+      {
+        data: barData,
+        backgroundColor: colorMain,
+        borderColor: colorMain,
+      }
+    ]
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        barPercentage: 0.7,
+      }],
+      yAxes: [{
+        ticks: {
+          max: barTicksMax,
+          stepSize: barTicksStepSize,
+        }
+      }]
+    }
+  }
+});
+

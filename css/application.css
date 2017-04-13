@@ -218,12 +218,12 @@ header {
       margin: 25px 20px 0; } }
 
 /* line 46, ../scss/layout/_containers.scss */
-.line-chart-container {
+.chart-container {
   border-bottom: 1px solid rgba(116, 140, 171, 0.5);
   padding: 0 10px 20px; }
   @media (min-width: 768px) {
     /* line 46, ../scss/layout/_containers.scss */
-    .line-chart-container {
+    .chart-container {
       padding: 0 20px 25px; } }
 
 /* line 7, ../scss/layout/_search.scss */
@@ -290,7 +290,7 @@ span#alert-tag {
   padding: 0 15px; }
 
 /* line 5, ../scss/layout/_charts.scss */
-.chart-title {
+.line-chart-title {
   margin-bottom: 5px;
   font-size: 1rem;
   font-weight: 500;
@@ -298,28 +298,53 @@ span#alert-tag {
   text-transform: uppercase; }
   @media (min-width: 480px) {
     /* line 5, ../scss/layout/_charts.scss */
-    .chart-title {
+    .line-chart-title {
       margin-bottom: 0; } }
 
-/* line 18, ../scss/layout/_charts.scss */
+/* line 14, ../scss/layout/_charts.scss */
+.chart-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #696969;
+  text-transform: uppercase;
+  padding: 20px 10px 0; }
+  @media (min-width: 768px) {
+    /* line 14, ../scss/layout/_charts.scss */
+    .chart-title {
+      padding: 25px 20px 0; } }
+
+/* line 27, ../scss/layout/_charts.scss */
+canvas.chart {
+  width: 100% !important;
+  height: 225px !important; }
+  @media (min-width: 480px) {
+    /* line 27, ../scss/layout/_charts.scss */
+    canvas.chart {
+      height: 250px !important; } }
+  @media (min-width: 768px) {
+    /* line 27, ../scss/layout/_charts.scss */
+    canvas.chart {
+      height: 300px !important; } }
+
+/* line 42, ../scss/layout/_charts.scss */
 .line-chart-options {
   padding: 20px 10px 0; }
   @media (min-width: 480px) {
-    /* line 18, ../scss/layout/_charts.scss */
+    /* line 42, ../scss/layout/_charts.scss */
     .line-chart-options {
       display: flex;
       justify-content: space-between;
       padding: 20px 10px 0; } }
   @media (min-width: 768px) {
-    /* line 18, ../scss/layout/_charts.scss */
+    /* line 42, ../scss/layout/_charts.scss */
     .line-chart-options {
       padding: 25px 20px 0; } }
 
-/* line 29, ../scss/layout/_charts.scss */
+/* line 53, ../scss/layout/_charts.scss */
 .line-chart-timescale {
   display: flex;
   justify-content: flex-end; }
-  /* line 31, ../scss/layout/_charts.scss */
+  /* line 55, ../scss/layout/_charts.scss */
   .line-chart-timescale button {
     width: 68px;
     height: 26px;
@@ -328,23 +353,10 @@ span#alert-tag {
     border-radius: 15px;
     margin-left: 7px;
     padding-top: 2px; }
-    /* line 39, ../scss/layout/_charts.scss */
+    /* line 63, ../scss/layout/_charts.scss */
     .line-chart-timescale button.active {
       color: #f5f5f5;
       background-color: #1fad3b; }
-
-/* line 46, ../scss/layout/_charts.scss */
-canvas#line-chart {
-  width: 100% !important;
-  height: 225px !important; }
-  @media (min-width: 480px) {
-    /* line 46, ../scss/layout/_charts.scss */
-    canvas#line-chart {
-      height: 250px !important; } }
-  @media (min-width: 768px) {
-    /* line 46, ../scss/layout/_charts.scss */
-    canvas#line-chart {
-      height: 300px !important; } }
 
 /* line 7, ../scss/layout/_navigation.scss */
 nav {

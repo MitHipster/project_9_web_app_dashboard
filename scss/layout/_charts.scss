@@ -2,12 +2,36 @@
 // Chart Styles
 //============================================================
 
-.chart-title {
+.line-chart-title {
   margin-bottom: 5px;
   @include font-settings(1rem, 500, $color-text-light);
   text-transform: uppercase;
   @include mobile {
     margin-bottom: 0;
+  }
+}
+
+.chart-title {
+  @include font-settings(1rem, 500, $color-text-light);
+  text-transform: uppercase;
+  padding: 20px $mobile-edge 0;
+  @include tablet {
+    padding: 25px $tablet-edge 0;
+  }
+}
+
+
+
+//------------- Canvas ------------
+
+canvas.chart {
+  width: 100% !important;
+  height: 225px !important;
+  @include mobile {
+    height: 250px !important;
+  }
+  @include tablet {
+    height: 300px !important;
   }
 }
 
@@ -43,14 +67,5 @@
   }
 }
 
-canvas#line-chart {
-  width: 100% !important;
-  height: 225px !important;
-  @include mobile {
-    height: 250px !important;
-  }
-  @include tablet {
-    height: 300px !important;
-  }
-}
+
 
