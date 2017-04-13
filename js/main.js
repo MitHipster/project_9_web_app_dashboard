@@ -37,15 +37,21 @@ const fontColor = '#696969';
 const fontSize = 13;
 
 console.log(Chart.defaults);
-Chart.defaults.global.defaultFontFamily = fontStack;
 Chart.defaults.global.defaultFontColor = fontColor;
+Chart.defaults.global.defaultFontFamily = fontStack;
 Chart.defaults.global.defaultFontSize = fontSize;
 
 Chart.defaults.global.maintainAspectRatio = false;
-Chart.defaults.scale.ticks.beginAtZero = true;
 
-Chart.defaults.global.title.display = true;
+Chart.defaults.global.tooltips.backgroundColor = 'rgba(29, 45, 68, 0.6)'; // $yankees-blue
+Chart.defaults.global.tooltips.bodyFontColor = colorAccent; //
+Chart.defaults.global.tooltips.titleFontColor = colorAccent; //
+Chart.defaults.global.tooltips.cornerRadius = 4; //
+
 Chart.defaults.global.legend.display = false;
+Chart.defaults.global.title.display = true;
+
+Chart.defaults.scale.ticks.beginAtZero = true;
 
 // Line chart variables
 const LINE_CHART = $('#line-chart');
