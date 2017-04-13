@@ -30,14 +30,15 @@ $(document).ready( () => {
 });
 
 // Global chart defaults
-const colorMain = '#3e5c76';
+const colorMain = '#3e5c76'; // $deep-space
+const colorSecond = '#1fad3b'; // $forest-green
+const colorThird = '#1e6d40'; // Green pea
 const colorAccent = '#f5f5f5';
 const colorFill = 'rgba(62, 92, 118, 0.4)'; // $deep-space (#3e5c76)
 const fontStack = "'Open Sans', sans-serif";
 const fontColor = '#696969';
 const fontSize = 13;
 
-console.log(Chart.defaults);
 Chart.defaults.global.defaultFontColor = fontColor;
 Chart.defaults.global.defaultFontFamily = fontStack;
 Chart.defaults.global.defaultFontSize = fontSize;
@@ -119,7 +120,7 @@ let lineChart = new Chart(LINE_CHART, {
   }
 });
 
-// Line chart data and variables
+// Bar chart data and variables
 const barLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const barData = [250, 450, 300, 250, 400, 350, 200];
 const barTicksMax = 500;
@@ -135,7 +136,7 @@ let barChart = new Chart(BAR_CHART, {
       {
         data: barData,
         backgroundColor: colorMain,
-        borderColor: colorMain,
+        borderColor: colorAccent,
       }
     ]
   },
@@ -150,6 +151,37 @@ let barChart = new Chart(BAR_CHART, {
           stepSize: barTicksStepSize,
         }
       }]
+    }
+  }
+});
+
+// Donut chart data and variables
+const donutLabels = ["Phones", "Tablets", "Desktops"];
+const donutData = [2000, 1750, 10000];
+const donutBackColor = [colorThird, colorSecond, colorMain];
+
+// Donut chart constructor
+const DONUT_CHART = $('.donut-chart');
+let donutChart = new Chart(DONUT_CHART, {
+  type: 'doughnut',
+  data: {
+    labels: donutLabels,
+    datasets: [
+      {
+        data: donutData,
+        backgroundColor: donutBackColor,
+        borderColor: colorAccent,
+      }
+    ]
+  },
+  options: {
+    legend: {
+      display: true,
+      position: 'right',
+      labels: {
+        boxWidth: 20,
+        padding: 20,
+      }
     }
   }
 });
