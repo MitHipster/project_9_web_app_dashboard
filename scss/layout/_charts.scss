@@ -2,26 +2,6 @@
 // Chart Styles
 //============================================================
 
-.line-chart-title {
-  margin-bottom: 5px;
-  @include font-settings(1rem, 500, $color-text-light);
-  text-transform: uppercase;
-  @include mobile {
-    margin-bottom: 0;
-  }
-}
-
-.chart-title {
-  @include font-settings(1rem, 500, $color-text-light);
-  text-transform: uppercase;
-  padding: 20px $mobile-edge 0;
-  @include tablet {
-    padding: 25px $tablet-edge 0;
-  }
-}
-
-
-
 //------------- Canvas ------------
 
 canvas.chart {
@@ -39,11 +19,22 @@ canvas.chart {
 
 //----------- Line Chart ----------
 
+.line-chart-title {
+  margin-bottom: 5px;
+  @include font-settings(1rem, 500, $color-text-light);
+  text-transform: uppercase;
+  @include mobile {
+    margin-bottom: 0;
+  }
+}
+
+
 .line-chart-options {
   padding: 20px $mobile-edge 0;
   @include mobile {
     @include display-flex(space-between);
     padding: 20px $mobile-edge 0;
+    margin-bottom: -10px;
   }
   @include tablet {
     padding: 25px $tablet-edge 0;

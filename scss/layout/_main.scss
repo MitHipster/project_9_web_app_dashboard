@@ -14,3 +14,15 @@ main {
     transform: translateX(88px);
   }
 }
+
+
+
+.section-title {
+  @include font-settings(1rem, 500, $color-text-light);
+  text-transform: uppercase;
+  padding: 20px $mobile-edge 0;
+  margin-bottom: -10px;
+  @include tablet {
+    padding: 25px $tablet-edge 0;
+  }
+}
