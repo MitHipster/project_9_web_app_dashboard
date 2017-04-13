@@ -226,6 +226,16 @@ header {
     .chart-container {
       padding: 0 20px 25px; } }
 
+@media (min-width: 600px) {
+  /* line 58, ../scss/layout/_containers.scss */
+  .supplemental-charts-container {
+    display: flex;
+    justify-content: space-around; }
+    /* line 61, ../scss/layout/_containers.scss */
+    .supplemental-charts-container > div {
+      width: 50% !important;
+      border-right: 1px solid rgba(116, 140, 171, 0.5); } }
+
 /* line 7, ../scss/layout/_search.scss */
 #page-title {
   font-size: 1.1rem;

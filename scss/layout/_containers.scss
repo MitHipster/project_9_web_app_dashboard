@@ -41,13 +41,27 @@
 
 
 
-//----------- Line Chart ----------
+//------------- Charts ------------
 
 .chart-container {
   border-bottom: $border;
   padding: 0 $mobile-edge 20px;
   @include tablet {
     padding: 0 $tablet-edge 25px;
+  }
+}
+
+
+
+//------- Bar & Donut Charts ------
+
+.supplemental-charts-container {
+  @include charts {
+    @include display-flex(space-around);
+    > div {
+      width: 50% !important;
+      border-right: $border;
+    }
   }
 }
 

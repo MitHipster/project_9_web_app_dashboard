@@ -32,7 +32,7 @@ $(document).ready( () => {
 // Global chart defaults
 const colorMain = '#3e5c76'; // $deep-space
 const colorSecond = '#1fad3b'; // $forest-green
-const colorThird = '#1e6d40'; // Green pea
+const colorThird = '#327C5E'; // Amazon
 const colorAccent = '#f5f5f5';
 const colorFill = 'rgba(62, 92, 118, 0.4)'; // $deep-space (#3e5c76)
 const fontStack = "'Open Sans', sans-serif";
@@ -143,7 +143,7 @@ let barChart = new Chart(BAR_CHART, {
   options: {
     scales: {
       xAxes: [{
-        barPercentage: 0.7,
+        barPercentage: 0.65,
       }],
       yAxes: [{
         ticks: {
@@ -175,6 +175,7 @@ let donutChart = new Chart(DONUT_CHART, {
     ]
   },
   options: {
+    cutoutPercentage: 55,
     legend: {
       display: true,
       position: 'right',

@@ -46,6 +46,12 @@
   }
 }
 
+@mixin charts {
+  @media (min-width: #{$charts-width}) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: #{$tablet-width}) {
     @content;
