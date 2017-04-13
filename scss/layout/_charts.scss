@@ -19,7 +19,7 @@
   padding: 20px $mobile-edge 0;
   @include mobile {
     @include display-flex(space-between);
-    padding: 25px $mobile-edge 0;
+    padding: 20px $mobile-edge 0;
   }
   @include tablet {
     padding: 25px $tablet-edge 0;
@@ -31,14 +31,14 @@
   button {
     width: 68px;
     height: 26px;
-    background-color: $deep-space;
+    background-color: $color-header;
     color: $color-text-inv-dark;
     border-radius: 15px;
     margin-left: 7px;
     padding-top: 2px;
     &.active {
       color: $color-text-inv-light;
-      background-color: $color-btn-background;
+      background-color: $color-btn-state;
     }
   }
 }

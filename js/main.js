@@ -8,6 +8,11 @@ $(document).ready( () => {
     $('main').toggleClass('slide-right');
     $('#arrow').toggleClass('rotate');
   });
+
+  // Fade out alert message with close button is clicked
+  $('#alert-btn').on('click', () => {
+    $('.alert-container').fadeOut(500);
+  });
   
   // On click event for line chart buttons to switch labels and datasets based timescale selected
   $('.line-chart-timescale').on('click', 'button', function () {

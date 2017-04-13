@@ -24,6 +24,23 @@
 
 
 
+//-------------- Alert ------------
+
+.alert-container {
+  @include display-flex(space-between, center);
+  @include font-settings(0.9rem, 100, $color-text-inv-light);
+  background-color: $color-header;
+  border: $border-hdr;
+  border-radius: 4px;
+  padding: 2px 0;
+  margin: 20px $mobile-edge 0;
+  @include tablet {
+    margin: 25px $tablet-edge 0;
+  }
+}
+
+
+
 //----------- Line Chart ----------
 
 .line-chart-container {
