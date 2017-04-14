@@ -447,17 +447,27 @@ canvas.chart {
       .social-stats .social-network {
         font-size: 1.2rem;
         line-height: 1.2rem; } }
-  /* line 39, ../scss/layout/_social.scss */
+    @media (min-width: 1024px) {
+      /* line 30, ../scss/layout/_social.scss */
+      .social-stats .social-network {
+        font-size: 1.3rem;
+        line-height: 1.3rem; } }
+  /* line 43, ../scss/layout/_social.scss */
   .social-stats .social-numbers {
     font-size: 2rem;
     font-weight: 100;
     color: inherit;
     line-height: 2rem; }
     @media (min-width: 768px) {
-      /* line 39, ../scss/layout/_social.scss */
+      /* line 43, ../scss/layout/_social.scss */
       .social-stats .social-numbers {
         font-size: 2.2rem;
         line-height: 2.2rem; } }
+    @media (min-width: 1024px) {
+      /* line 43, ../scss/layout/_social.scss */
+      .social-stats .social-numbers {
+        font-size: 2.4rem;
+        line-height: 2.4rem; } }
 
 /* line 7, ../scss/layout/_main.scss */
 main {
