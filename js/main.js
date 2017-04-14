@@ -32,7 +32,7 @@ $(document).ready( () => {
 // Global chart defaults
 const colorMain = '#3e5c76'; // $deep-space
 const colorSecond = '#1fad3b'; // $forest-green
-const colorThird = '#327C5E'; // Amazon
+const colorThird = '#327c5e'; // Amazon
 const colorAccent = '#f5f5f5';
 const colorFill = 'rgba(62, 92, 118, 0.4)'; // $deep-space (#3e5c76)
 const fontStack = "'Open Sans', sans-serif";

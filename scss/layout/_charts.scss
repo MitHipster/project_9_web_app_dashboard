@@ -17,6 +17,14 @@ canvas.chart {
 
 
 
+//------------- Title -------------
+
+.chart-title {
+  margin-bottom: -10px;
+}
+
+
+
 //----------- Line Chart ----------
 
 .line-chart-title {
@@ -31,10 +39,10 @@ canvas.chart {
 
 .line-chart-options {
   padding: 20px $mobile-edge 0;
+  margin-bottom: -10px;
   @include mobile {
     @include display-flex(space-between);
     padding: 20px $mobile-edge 0;
-    margin-bottom: -10px;
   }
   @include tablet {
     padding: 25px $tablet-edge 0;

@@ -2,4 +2,26 @@
 // Social Media Styles
 //============================================================
 
-//------------- Canvas ------------
+//-------------- Logo -------------
+
+.social-logo {
+  background-color: $color-header;
+  width: 72px;
+  height: 72px;
+  padding: 16px;
+  border: $border;
+  border-radius: 50%;
+  img {
+    width: 36px;
+    height: 36px;
+  }
+  #facebook-logo {
+    transform: scale(1.25)
+  }
+}
+
+.social-stats {
+  width: 100%;
+  text-align: center;
+}
+
