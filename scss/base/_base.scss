@@ -17,8 +17,8 @@ html {
 
 body {
   @extend %font-primary;
-  height: 100%;
   @include font-settings(1rem, 300, $color-text-dark);
+  height: 100%;
   background-color: $color-nav;
   overflow-x: hidden;
 }

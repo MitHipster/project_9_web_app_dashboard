@@ -70,23 +70,26 @@
 //---------- Social Stats ---------
 
 .outer-social-container {
-  @include display-flex(space-between, center);
+  margin-top: 10px;
+  @include mobile {
+    @include display-flex(space-between);
+    flex-wrap: wrap;
+  }
 }
 
 .social-container {
-  @include display-flex(space-between);
-  flex-direction: column;
+  @include display-flex(flex-start);
+//  flex-grow: 1;
   align-items: center;
-  width: 30%;
-  height: 180px;
   background-color: $color-tab;
   border: $border;
   border-radius: 4px;
-  padding: $mobile-edge;
-  @include tablet {
-    padding: $tablet-edge;
+  margin-bottom: 20px;
+  padding: 15px;
+  @include mobile {
+    width: 48%;
   }
-//  @include tablet {
-//    @include display-flex(space-between);
-//  }
+  @include tablet {
+    width: 32%;
+  }
 }

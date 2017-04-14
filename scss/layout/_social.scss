@@ -20,8 +20,29 @@
   }
 }
 
+//------------- Stats -------------
+
 .social-stats {
-  width: 100%;
-  text-align: center;
+  @include display-flex(center);
+  flex-direction: column;
+  font-weight: 500;
+  margin-left: 15px;
+  .social-network {
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+    color: $color-header;
+    @include tablet {
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+    }
+  }
+  .social-numbers {
+    @include font-settings(2rem, 100);
+    line-height: 2rem;
+    @include tablet {
+      font-size: 2.2rem;
+      line-height: 2.2rem;
+    }
+  }
 }
 
