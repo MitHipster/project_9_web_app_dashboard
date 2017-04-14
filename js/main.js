@@ -187,3 +187,37 @@ let donutChart = new Chart(DONUT_CHART, {
   }
 });
 
+$.ajax({
+  url: 'https://randomuser.me/api/?nat=us&results=5&inc=picture,name,email&noinfo',
+  dataType: 'json',
+  success: (newMembers) => {
+    console.log(newMembers);
+    const attribute = 'class=';
+    const containerClass = '"member-container"';
+    const imageClass = '"member-img"';
+    const infoClass = '"member-info"';
+    const nameClass = '"member-name"';
+    const emailClass = '"member-email"';
+    const sinceClass = '"member-since"';
+    const innerContainer = $('.inner-members-container');
+    
+    var signupDate = $.format.date($.now(), "M/d/yy");
+    
+    $.each(newMembers.results, (i) => {
+      var memberHTML = 
+          `<div ${attribute + containerClass}>
+            <div ${attribute + imageClass}>
+              <img src="" alt="New member profile picture">
+            </div>
+            <div ${attribute + infoClass}>
+              <p ${attribute + nameClass}</p>
+              <p ${attribute + emailClass}></p>
+            </div>
+            <div ${attribute + sinceClass}>
+              <time>${signupDate}</time>
+            </div>
+          </div>`;
+      console.log(memberHTML);
+    });
+  }
+});
