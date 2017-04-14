@@ -69,7 +69,7 @@
 
 //---------- Social Stats ---------
 
-.outer-social-container {
+.inner-social-container {
   margin-top: 10px;
   @include mobile {
     @include display-flex(space-between);
