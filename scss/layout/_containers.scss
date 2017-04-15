@@ -79,7 +79,6 @@
 
 .social-container {
   @include display-flex(flex-start);
-//  flex-grow: 1;
   align-items: center;
   background-color: $color-tab;
   border: $border;
@@ -91,5 +90,43 @@
   }
   @include tablet {
     width: 32%;
+  }
+}
+
+
+
+//- New Members & Recent Activity -
+
+.outer-users-container {
+  @include charts {
+    @include display-flex(space-around);
+    > div {
+      width: 50% !important;
+      border-right: $border;
+    }
+  }
+}
+
+
+
+//---------- New Members ----------
+
+.new-members-container {
+  padding-bottom: 10px;
+}
+
+.inner-members-container {
+  @include mobile {
+    @include display-flex(space-around);
+    flex-direction: column;
+  }
+}
+
+li.member-container {
+  @include display-flex(flex-start);
+  align-items: center;
+  padding: 16px 0;
+  &:not(:last-child) {
+    border-bottom: $border;
   }
 }

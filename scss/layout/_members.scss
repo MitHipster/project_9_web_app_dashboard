@@ -1,0 +1,32 @@
+//============================================================
+// New Members Styles
+//============================================================
+
+//--------- Profile Image ---------
+
+.member-img {
+  width: 36px;
+  height: 36px;
+  img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+}
+
+
+
+//---------- Member Info ----------
+
+.member-info {
+  @include display-flex(center);
+  @include font-settings(0.9rem, 400);
+  flex-direction: column;
+  flex-grow: 1;
+  line-height: 1rem;
+  margin-left: 10px;
+  .member-email {
+    font-weight: 100;
+    color: $color-header;
+  }
+}

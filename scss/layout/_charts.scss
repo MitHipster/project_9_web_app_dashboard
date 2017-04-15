@@ -51,6 +51,8 @@ canvas.chart {
 
 .line-chart-timescale {
   @include display-flex(flex-end);
+  position: relative;
+  z-index: 100;
   button {
     width: 68px;
     height: 26px;

@@ -188,36 +188,45 @@ let donutChart = new Chart(DONUT_CHART, {
 });
 
 $.ajax({
-  url: 'https://randomuser.me/api/?nat=us&results=5&inc=picture,name,email&noinfo',
+  url: 'https://randomuser.me/api/?nat=us&results=4&inc=picture,name,email&noinfo',
   dataType: 'json',
   success: (newMembers) => {
     console.log(newMembers);
-    const attribute = 'class=';
-    const containerClass = '"member-container"';
-    const imageClass = '"member-img"';
-    const infoClass = '"member-info"';
-    const nameClass = '"member-name"';
-    const emailClass = '"member-email"';
-    const sinceClass = '"member-since"';
+    const attribute = 'class';
+    const containerClass = 'member-container';
+    const imageClass = 'member-img';
+    const infoClass = 'member-info';
+    const nameClass = 'member-name';
+    const emailClass = 'member-email';
+    const sinceClass = 'member-since';
     const innerContainer = $('.inner-members-container');
     
-    var signupDate = $.format.date($.now(), "M/d/yy");
+    let signupDate = $.format.date($.now(), "M/d/yy");
     
     $.each(newMembers.results, (i) => {
-      var memberHTML = 
-          `<div ${attribute + containerClass}>
-            <div ${attribute + imageClass}>
-              <img src="" alt="New member profile picture">
+      let member = newMembers.results[i];
+      let image = member.picture.thumbnail;
+      let name = properCase(member.name.first) + ' ' + properCase(member.name.last);
+      let email = member.email;
+      let memberHTML = 
+          `<li ${attribute}="${containerClass}">
+            <div ${attribute}="${imageClass}">
+              <img src="${image}" alt="New member ${name}'s profile picture">
             </div>
-            <div ${attribute + infoClass}>
-              <p ${attribute + nameClass}</p>
-              <p ${attribute + emailClass}></p>
+            <div ${attribute}="${infoClass}">
+              <p ${attribute}="${nameClass}">${name}</p>
+              <p ${attribute}="${emailClass}">${email}</p>
             </div>
-            <div ${attribute + sinceClass}>
+            <div ${attribute}="${sinceClass}">
               <time>${signupDate}</time>
             </div>
-          </div>`;
-      console.log(memberHTML);
+          </li>`;
+      innerContainer.append(memberHTML);
     });
   }
 });
+
+let properCase = (text) => {
+  text = text.charAt(0).toUpperCase() + text.substr(1);
+  return text;
+};
