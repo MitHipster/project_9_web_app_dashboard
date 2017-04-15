@@ -525,7 +525,7 @@ canvas.chart {
   margin-left: 10px; }
   /* line 28, ../scss/layout/_members.scss */
   .member-info .member-email {
-    font-weight: 100;
+    font-weight: 300;
     color: #3e5c76; }
 
 /* line 7, ../scss/layout/_main.scss */
