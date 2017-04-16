@@ -4,7 +4,7 @@
 
 //--------- Profile Image ---------
 
-.member-img {
+.member-image {
   width: 36px;
   height: 36px;
   img {
@@ -19,14 +19,25 @@
 //---------- Member Info ----------
 
 .member-info {
-  @include display-flex(center);
-  @include font-settings(0.9rem, 400);
-  flex-direction: column;
+  @include font-settings(0.9rem, 500);
   flex-grow: 1;
-  line-height: 1rem;
+  line-height: 1.1rem;
   margin-left: 10px;
+  @include tablet {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
   .member-email {
     font-weight: 300;
     color: $color-header;
   }
 }
+
+.member-other {
+  @include font-settings(0.9rem, 400);
+  margin-left: 10px;
+  @include tablet {
+    font-size: 1rem;
+  }
+}
+

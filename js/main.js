@@ -187,16 +187,24 @@ let donutChart = new Chart(DONUT_CHART, {
   }
 });
 
-let newMembers = {};
+let members = {};
 
 const attribute = 'class';
 const containerClass = 'member-container';
-const imageClass = 'member-img';
+const memberSection = 'new member';
+const activitySection = 'recent activity';
+const imageClass = 'member-image';
 const infoClass = 'member-info';
 const nameClass = 'member-name';
 const emailClass = 'member-email';
-const sinceClass = 'member-since';
-const innerContainer = $('.inner-members-container');
+const otherClass = 'member-other';
+const activityInfo = {
+  comments: ["commented on WEBanalytics' SEO Tips", "liked the post Facebook's Changes for 2017", "commented on Facebook's Changes for 2017", "posted WEBanalytics' SEO Tips"],
+  posted: ["4 hours ago", "5 hours ago", "5 hours ago", "12 hours ago"]
+};
+
+const innerMembersContainer = $('.inner-members-container');
+const innerActivityContainer = $('.inner-activity-container');
 
 let signupDate = $.format.date($.now(), "M/d/yy");
 
@@ -204,11 +212,16 @@ $.ajax({
   url: 'https://randomuser.me/api/?nat=us&results=4&inc=picture,name,email&noinfo',
   dataType: 'json',
   success: (data) => {
-    newMembers = data;
+    members = data;
     
-    $.each(newMembers.results, (i) => {
-      let member = newMembers.results[i];
-      innerContainer.append(memberHTML(member));
+    $.each(members.results, (i) => {
+      let member = members.results[i];
+      innerMembersContainer.append(memberHTML(member, memberSection));
+    });
+    
+    $.each(members.results, (i) => {
+      let activity = members.results[i];
+      innerActivityContainer.append(memberHTML(activity, activitySection, i));
     });
   }
 });
@@ -218,22 +231,33 @@ let properCase = (text) => {
   return text;
 };
 
-let memberHTML = (member) => {
+let memberHTML = (member, section, i) => {
   let image = member.picture.thumbnail;
   let name = properCase(member.name.first) + ' ' + properCase(member.name.last);
+  let sectionName = '';
+  let other = '';
   let email = member.email;
+  
+  if (section === memberSection) {
+    sectionName = `<p ${attribute}="${nameClass}">${name}</p>`;
+    other = `<time>${signupDate}</time>`;
+  } else {
+    sectionName = `<p ${attribute}="${nameClass}">${name} ${activityInfo.comments[i]}</p>`;
+    other = ``;
+  }
   let html = 
       `<li ${attribute}="${containerClass}">
         <div ${attribute}="${imageClass}">
-          <img src="${image}" alt="New member ${name}'s profile picture">
+          <img src="${image}" alt="Member ${name}'s profile picture">
         </div>
         <div ${attribute}="${infoClass}">
-          <p ${attribute}="${nameClass}">${name}</p>
+          ${sectionName}
           <p ${attribute}="${emailClass}">${email}</p>
         </div>
-        <div ${attribute}="${sinceClass}">
+        <div ${attribute}="${otherClass}">
           <time>${signupDate}</time>
         </div>
       </li>`;
-   return html;
+  console.log(html);
+  return html;
 };
