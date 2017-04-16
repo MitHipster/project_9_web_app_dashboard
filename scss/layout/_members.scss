@@ -19,25 +19,44 @@
 //---------- Member Info ----------
 
 .member-info {
-  @include font-settings(0.9rem, 500);
+  @include font-settings(0.95rem, 500);
   flex-grow: 1;
+  overflow: hidden;
   line-height: 1.1rem;
   margin-left: 10px;
   @include tablet {
     font-size: 1rem;
     line-height: 1.2rem;
   }
-  .member-email {
-    font-weight: 300;
-    color: $color-header;
+  > p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
+.member-email {
+  @include font-settings(0.9rem, 300);
+  @extend .member-posted;
+  color: $color-header;
+}
+.member-posted {
+  @extend .member-email;
+}
+
 .member-other {
-  @include font-settings(0.9rem, 400);
-  margin-left: 10px;
-  @include tablet {
+  time {
+    @include font-settings(0.95rem, 400);
+    margin-left: 10px;
+    @include tablet {
     font-size: 1rem;
+    }
+  }
+  a.activity-arrow {
+    @include icon-link(28px, 28px, 0 -8px 0 0, 0, 0.6);
+  }
+  img.arrow-right {
+    display: inline-block;
   }
 }
 

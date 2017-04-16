@@ -27,7 +27,7 @@ header {
       display: none;
     }
   }
-  img#arrow {
+  svg#arrow {
     display: inline-block;
     transition: transform .5s;
     &.rotate {

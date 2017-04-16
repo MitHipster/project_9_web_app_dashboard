@@ -189,7 +189,6 @@ let donutChart = new Chart(DONUT_CHART, {
 
 let members = {};
 
-const attribute = 'class';
 const containerClass = 'member-container';
 const memberSection = 'new member';
 const activitySection = 'recent activity';
@@ -197,7 +196,12 @@ const imageClass = 'member-image';
 const infoClass = 'member-info';
 const nameClass = 'member-name';
 const emailClass = 'member-email';
+const postedClass = 'member-posted';
 const otherClass = 'member-other';
+const activityArrowClass = 'activity-arrow';
+const arrowRightClass = 'arrow-right';
+const arrowSource = 'icons/icon-menu.svg';
+const arrowAlt = 'click to view activity history';
 const activityInfo = {
   comments: ["commented on WEBanalytics' SEO Tips", "liked the post Facebook's Changes for 2017", "commented on Facebook's Changes for 2017", "posted WEBanalytics' SEO Tips"],
   posted: ["4 hours ago", "5 hours ago", "5 hours ago", "12 hours ago"]
@@ -234,28 +238,32 @@ let properCase = (text) => {
 let memberHTML = (member, section, i) => {
   let image = member.picture.thumbnail;
   let name = properCase(member.name.first) + ' ' + properCase(member.name.last);
-  let sectionName = '';
-  let other = '';
   let email = member.email;
+  let infoPrimary = '';
+  let infoSecondary = '';
+  let other = '';
   
   if (section === memberSection) {
-    sectionName = `<p ${attribute}="${nameClass}">${name}</p>`;
+    infoPrimary = `<p class="${nameClass}">${name}</p>`;
+    infoSecondary = `<p class="${emailClass}">${email}</p>`;
     other = `<time>${signupDate}</time>`;
   } else {
-    sectionName = `<p ${attribute}="${nameClass}">${name} ${activityInfo.comments[i]}</p>`;
-    other = ``;
+    infoPrimary = `<p class="${nameClass}">${name} ${activityInfo.comments[i]}</p>`;
+    infoSecondary = `<p class="${postedClass}">${activityInfo.posted[i]}</p>`;
+    other = `<a href="#" class="${activityArrowClass}"><img class="${arrowRightClass}" src="${arrowSource}" alt="${arrowAlt}"></a>`;
   }
+  
   let html = 
-      `<li ${attribute}="${containerClass}">
-        <div ${attribute}="${imageClass}">
+      `<li class="${containerClass}">
+        <div class="${imageClass}">
           <img src="${image}" alt="Member ${name}'s profile picture">
         </div>
-        <div ${attribute}="${infoClass}">
-          ${sectionName}
-          <p ${attribute}="${emailClass}">${email}</p>
+        <div class="${infoClass}">
+          ${infoPrimary}
+          ${infoSecondary}
         </div>
-        <div ${attribute}="${otherClass}">
-          <time>${signupDate}</time>
+        <div class="${otherClass}">
+          ${other}
         </div>
       </li>`;
   console.log(html);

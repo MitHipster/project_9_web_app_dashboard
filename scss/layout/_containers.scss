@@ -98,8 +98,13 @@
 //- New Members & Recent Activity -
 
 .outer-users-container {
-  
-  @extend .supplemental-charts-container;
+  @include charts {
+    > div {
+      float: left;
+      width: 50% !important;
+      border-right: $border;
+    }
+  }
 }
 
 
@@ -109,13 +114,6 @@
 .new-members-container {
   padding-bottom: 10px;
 }
-
-.inner-members-container {
-  margin: auto;
-  @include display-flex();
-  flex-direction: column;
-}
-
 
 li.member-container {
   @include display-flex(space-between);
