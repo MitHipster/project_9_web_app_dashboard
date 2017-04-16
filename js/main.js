@@ -27,6 +27,15 @@ $(document).ready( () => {
     lineChart.options.scales.yAxes[0].ticks.stepSize = lineTicksStepSize[lineTimescale];
     lineChart.update();
   });
+  
+  // Mouse over event that adds a title attribute to paragraphs in the member sections if text is cutoff with an ellipsis
+  $('.member-info p').on('mouseover', function() {
+    if (this.offsetWidth < this.scrollWidth && !$(this).attr('title'))
+    {
+      $(this).attr('title', $(this).text());
+    }
+  });
+
 });
 
 // Global chart defaults
