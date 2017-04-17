@@ -31,9 +31,33 @@ $(document).ready( () => {
   // Mouse over event that adds a title attribute to paragraphs in the member sections if text is cutoff with an ellipsis
   $('.member-info p').on('mouseover', function() {
     if (this.offsetWidth < this.scrollWidth && !$(this).attr('title'))
-    {
-      $(this).attr('title', $(this).text());
+      {
+        $(this).attr('title', $(this).text());
+      }
+  });
+  
+  $('#message-form').on('click', 'button', (e) => {
+    e.preventDefault();
+    
+    const messageForm = $('#message-form');
+    const searchForUser = $('#search-user');
+    let userName = searchForUser.val();
+    const messageForUser = $('#message-user');
+    let userMessage = messageForUser.val();
+    let systemNotice = '';
+    const confirmationId = 'confirmation';
+    let noticeCl = '';
+    let sentDialogHtml = '';
+    
+    if (userName.length > 0 && userMessage.length > 0) {
+      noticeCl = 'message-sent';
+      sentDialogHtml = 
+        `<div id="${confirmationId}" class="${noticeCl}">Your message to ${userName} has been sent.</div>`;
+      messageForm.append(sentDialogHtml);
+      messageForm.find("input[type=text], textarea").val("");
+      systemNotice = $(`#${confirmationId}`);
     }
+    systemNotice.delay(2000).fadeOut(500);
   });
 
 });
@@ -229,12 +253,12 @@ $.ajax({
     
     $.each(members.results, (i) => {
       let member = members.results[i];
-      innerMembersContainer.append(memberHTML(member, memberSection));
+      innerMembersContainer.append(memberHtml(member, memberSection));
     });
     
     $.each(members.results, (i) => {
       let activity = members.results[i];
-      innerActivityContainer.append(memberHTML(activity, activitySection, i));
+      innerActivityContainer.append(memberHtml(activity, activitySection, i));
     });
   }
 });
@@ -244,7 +268,7 @@ let properCase = (text) => {
   return text;
 };
 
-let memberHTML = (member, section, i) => {
+let memberHtml = (member, section, i) => {
   let image = member.picture.thumbnail;
   let name = properCase(member.name.first) + ' ' + properCase(member.name.last);
   let email = member.email;

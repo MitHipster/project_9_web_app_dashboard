@@ -1,0 +1,36 @@
+//============================================================
+// Form Styles
+//============================================================
+
+//--------- Message User ----------
+
+#message-form {
+  margin-top: -5px;
+  * {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+  }
+  button {
+    height: 48px;
+    @include font-settings(1rem, 400);
+    text-transform: uppercase;
+    background-color: $color-header;
+    color: $color-text-inv-dark;
+    padding-top: 2px;
+    &:active {
+      color: $color-text-inv-light;
+      background-color: $color-btn-state;
+      transform: translateY(3px);
+    }
+  }
+}
+
+.message-sent {
+  height: 50px;
+  @include font-settings(1rem, 400, $color-text-inv-light);
+  border-radius: 4px;
+  background-color: $amazon;
+//  margin-bottom: -50px;
+  padding: 5px 15px;
+}

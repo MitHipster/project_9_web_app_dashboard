@@ -27,6 +27,11 @@ ul {
   list-style: none;
 }
 
+form {
+//  margin: 0 auto;
+//  display: inline-block;
+}
+
 input {
   border: $border;
   border-radius: 4px;
@@ -36,6 +41,11 @@ input {
   @extend %focus-state-input;
 }
 
+textarea {
+  @extend input;
+  resize: none;
+}
+
 button {
   @include font-settings(0.9rem, 400, $color-text-inv-light);
   background: none;
@@ -43,4 +53,16 @@ button {
   border-radius: 4px;
   @extend %transition-state;
   @extend %focus-state-btn;
+}
+
+
+
+//============================================================
+// Helper Class
+//============================================================
+
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
 }
