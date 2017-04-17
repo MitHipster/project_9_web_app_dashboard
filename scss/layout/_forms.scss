@@ -21,7 +21,6 @@
     &:active {
       color: $color-text-inv-light;
       background-color: $color-btn-state;
-      transform: translateY(3px);
     }
   }
 }
@@ -29,8 +28,14 @@
 .message-sent {
   height: 50px;
   @include font-settings(1rem, 400, $color-text-inv-light);
+  line-height: 1.2;
   border-radius: 4px;
   background-color: $amazon;
 //  margin-bottom: -50px;
   padding: 5px 15px;
+}
+
+.message-error {
+  @extend .message-sent;
+  background-color: $crimson;
 }

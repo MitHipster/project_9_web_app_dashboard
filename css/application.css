@@ -611,17 +611,21 @@ canvas.chart {
     /* line 21, ../scss/layout/_forms.scss */
     #message-form button:active {
       color: #f5f5f5;
-      background-color: #1fad3b;
-      transform: translateY(3px); }
+      background-color: #1fad3b; }
 
-/* line 29, ../scss/layout/_forms.scss */
-.message-sent {
+/* line 28, ../scss/layout/_forms.scss */
+.message-sent, .message-error {
   height: 50px;
   font-size: 1rem;
   font-weight: 400;
   color: #f5f5f5;
+  line-height: 1.2;
   border-radius: 4px;
   background-color: #327c5e;
   padding: 5px 15px; }
+
+/* line 38, ../scss/layout/_forms.scss */
+.message-error {
+  background-color: #dc143c; }
 
 /*# sourceMappingURL=application.css.map */

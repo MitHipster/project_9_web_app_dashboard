@@ -55,9 +55,17 @@ $(document).ready( () => {
         `<div id="${confirmationId}" class="${noticeCl}">Your message to ${userName} has been sent.</div>`;
       messageForm.append(sentDialogHtml);
       messageForm.find("input[type=text], textarea").val("");
-      systemNotice = $(`#${confirmationId}`);
+    } else {
+      noticeCl = 'message-error';
+      sentDialogHtml = 
+        `<div id="${confirmationId}" class="${noticeCl}">Your message cannot be sent. Please complete each field.</div>`;
+      messageForm.append(sentDialogHtml);
     }
-    systemNotice.delay(2000).fadeOut(500);
+    systemNotice = $(`#${confirmationId}`);
+    systemNotice.delay(2500).fadeOut(500, () => {
+      systemNotice.remove();
+    });
+    
   });
 
 });
