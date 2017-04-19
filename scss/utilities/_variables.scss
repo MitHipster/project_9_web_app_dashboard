@@ -15,7 +15,7 @@ $bermuda-gray   : #748cab;
 
 $forest-green   : #1fad3b;
 $amazon         : #327c5e;
-$crimson        : #dc143c;
+$maroon-flush   : #ad1f4a;
 
 
 // Functional color variables
@@ -34,6 +34,9 @@ $color-text-inv-light : $smoke-white;
 $color-border         : $bermuda-gray;
 
 $color-btn-state      : $forest-green;
+
+$color-success        : $forest-green;
+$color-error          : $maroon-flush;
 
 $color-link-active    : $alabaster;
 

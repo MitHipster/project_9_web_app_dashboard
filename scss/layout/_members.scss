@@ -16,7 +16,7 @@
 
 
 
-//---------- Member Info ----------
+//- New Members & Recent Activity -
 
 .member-info {
   @include font-settings(0.95rem, 500);
@@ -40,6 +40,7 @@
   @extend .member-posted;
   color: $color-header;
 }
+
 .member-posted {
   @extend .member-email;
 }

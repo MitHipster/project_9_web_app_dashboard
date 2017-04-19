@@ -2,18 +2,18 @@
 body {
   font-family: "Catamaran", sans-serif; }
 
-/* line 8, ../scss/utilities/_extends.scss */
-input:focus, textarea:focus, .search-container #search-btn:focus {
+/* line 11, ../scss/utilities/_extends.scss */
+input:focus, textarea:focus, select:focus, .search-container #search-btn:focus {
   box-shadow: inset 0 0 5px #1d2d44; }
 
-/* line 14, ../scss/utilities/_extends.scss */
+/* line 21, ../scss/utilities/_extends.scss */
 button:focus {
   box-shadow: 0 0 5px 1px #1d2d44; }
 
-/* line 19, ../scss/utilities/_extends.scss */
-input, textarea, button {
+/* line 30, ../scss/utilities/_extends.scss */
+input, textarea, select, button {
   outline: none;
-  transition: box-shadow .5s ease-out; }
+  transition: box-shadow .4s ease-out, background-color .4s ease-out; }
 
 /* line 5, ../scss/base/_base.scss */
 * {
@@ -41,27 +41,40 @@ body {
 ul {
   list-style: none; }
 
-/* line 35, ../scss/base/_base.scss */
-input, textarea {
+/* line 30, ../scss/base/_base.scss */
+input, textarea, select {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #696969;
   border: 1px solid rgba(116, 140, 171, 0.5);
   border-radius: 4px;
   padding: 5px 15px;
   background-color: #f5f5f5; }
+
+/* line 40, ../scss/base/_base.scss */
+input::placeholder, textarea::placeholder, select::placeholder {
+  color: #696969; }
 
 /* line 44, ../scss/base/_base.scss */
 textarea {
   resize: none; }
 
 /* line 49, ../scss/base/_base.scss */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none; }
+
+/* line 56, ../scss/base/_base.scss */
 button {
   font-size: 0.9rem;
   font-weight: 400;
-  color: #f5f5f5;
+  color: #d3d3d3;
   background: none;
   border: none;
   border-radius: 4px; }
 
-/* line 64, ../scss/base/_base.scss */
+/* line 71, ../scss/base/_base.scss */
 .clearfix:after {
   content: " ";
   display: table;
@@ -238,11 +251,11 @@ header {
 
 @media (min-width: 600px) {
   /* line 58, ../scss/layout/_containers.scss */
-  .supplemental-charts-container {
+  .supplemental-charts-container, .message-settings-container {
     display: flex;
     justify-content: space-around; }
     /* line 61, ../scss/layout/_containers.scss */
-    .supplemental-charts-container > div {
+    .supplemental-charts-container > div, .message-settings-container > div {
       width: 50% !important;
       border-right: 1px solid rgba(116, 140, 171, 0.5); } }
 
@@ -295,6 +308,31 @@ li.member-container {
   /* line 122, ../scss/layout/_containers.scss */
   li.member-container:not(:last-child) {
     border-bottom: 1px solid rgba(116, 140, 171, 0.5); }
+
+@media (min-width: 600px) {
+  /* line 139, ../scss/layout/_containers.scss */
+  .message-settings-container .section-container {
+    border-bottom: none; } }
+
+/* line 150, ../scss/layout/_containers.scss */
+form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 260px; }
+
+/* line 161, ../scss/layout/_containers.scss */
+.toggle-switch-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px 0; }
+
+/* line 168, ../scss/layout/_containers.scss */
+.settings-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto; }
 
 /* line 7, ../scss/layout/_navigation.scss */
 nav {
@@ -461,11 +499,10 @@ canvas.chart {
     width: 68px;
     height: 26px;
     background-color: #3e5c76;
-    color: #d3d3d3;
     border-radius: 15px;
     margin-left: 7px;
     padding-top: 2px; }
-    /* line 64, ../scss/layout/_charts.scss */
+    /* line 63, ../scss/layout/_charts.scss */
     .line-chart-timescale button.active {
       color: #f5f5f5;
       background-color: #1fad3b; }
@@ -562,17 +599,17 @@ canvas.chart {
   color: inherit;
   color: #3e5c76; }
 
-/* line 48, ../scss/layout/_members.scss */
+/* line 49, ../scss/layout/_members.scss */
 .member-other time {
   font-size: 0.95rem;
   font-weight: 400;
   color: inherit;
   margin-left: 10px; }
   @media (min-width: 768px) {
-    /* line 48, ../scss/layout/_members.scss */
+    /* line 49, ../scss/layout/_members.scss */
     .member-other time {
       font-size: 1rem; } }
-/* line 55, ../scss/layout/_members.scss */
+/* line 56, ../scss/layout/_members.scss */
 .member-other a.activity-arrow {
   display: block;
   width: 28px;
@@ -586,34 +623,23 @@ canvas.chart {
     outline: 0 none;
     opacity: 1;
     transform: scale(1.1); }
-/* line 58, ../scss/layout/_members.scss */
+/* line 59, ../scss/layout/_members.scss */
 .member-other img.arrow-right {
   display: inline-block; }
 
-/* line 7, ../scss/layout/_forms.scss */
-#message-form {
-  margin-top: -5px; }
-  /* line 9, ../scss/layout/_forms.scss */
-  #message-form * {
-    display: block;
-    width: 100%;
-    margin: 20px 0; }
-  /* line 14, ../scss/layout/_forms.scss */
-  #message-form button {
-    height: 48px;
-    font-size: 1rem;
-    font-weight: 400;
-    color: inherit;
-    text-transform: uppercase;
-    background-color: #3e5c76;
-    color: #d3d3d3;
-    padding-top: 2px; }
-    /* line 21, ../scss/layout/_forms.scss */
-    #message-form button:active {
-      color: #f5f5f5;
-      background-color: #1fad3b; }
+/* line 8, ../scss/layout/_forms.scss */
+#message-form * {
+  width: 100%;
+  margin: 10px 0; }
+/* line 12, ../scss/layout/_forms.scss */
+#message-form #message-user {
+  flex-shrink: 1; }
+/* line 15, ../scss/layout/_forms.scss */
+#message-form button#send-btn {
+  flex-shrink: 0;
+  margin: auto 0 0; }
 
-/* line 28, ../scss/layout/_forms.scss */
+/* line 21, ../scss/layout/_forms.scss */
 .message-sent, .message-error {
   height: 50px;
   font-size: 1rem;
@@ -621,11 +647,62 @@ canvas.chart {
   color: #f5f5f5;
   line-height: 1.2;
   border-radius: 4px;
-  background-color: #327c5e;
-  padding: 5px 15px; }
+  background-color: #1fad3b;
+  border: 1px solid rgba(116, 140, 171, 0.5);
+  padding: 5px 15px;
+  margin-bottom: 20px !important; }
 
-/* line 38, ../scss/layout/_forms.scss */
+/* line 32, ../scss/layout/_forms.scss */
 .message-error {
-  background-color: #dc143c; }
+  background-color: #ad1f4a; }
+
+/* line 44, ../scss/layout/_forms.scss */
+#settings-form p {
+  width: 200px;
+  font-weight: 500; }
+/* line 49, ../scss/layout/_forms.scss */
+#settings-form button {
+  width: 48%; }
+
+/* line 54, ../scss/layout/_forms.scss */
+.select-timezone-container {
+  position: relative;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 10;
+  margin-top: 10px; }
+  /* line 61, ../scss/layout/_forms.scss */
+  .select-timezone-container #select-timezone {
+    width: 100%;
+    background-color: transparent;
+    padding-right: 30px; }
+  /* line 68, ../scss/layout/_forms.scss */
+  .select-timezone-container img#arrow-down {
+    position: absolute;
+    z-index: -10;
+    width: 28px;
+    height: 28px;
+    margin-left: -3px; }
+
+/* line 81, ../scss/layout/_forms.scss */
+.form-btn {
+  height: 48px;
+  text-transform: uppercase;
+  background-color: #3e5c76;
+  padding-top: 2px;
+  font-size: 1rem; }
+  /* line 88, ../scss/layout/_forms.scss */
+  .form-btn:active {
+    color: #f5f5f5;
+    background-color: #1d2d44; }
+  /* line 92, ../scss/layout/_forms.scss */
+  .form-btn#cancel-btn {
+    background-color: #838383; }
+    /* line 94, ../scss/layout/_forms.scss */
+    .form-btn#cancel-btn:active {
+      color: #f5f5f5;
+      background-color: #505050; }
 
 /*# sourceMappingURL=application.css.map */

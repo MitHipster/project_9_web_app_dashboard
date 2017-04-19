@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,300,400,500|Open+Sans:400" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/toggle-switch.css">
     <link rel="stylesheet" type="text/css" href="css/application.css">
 
   </head>
@@ -14,10 +15,10 @@
     <header role="banner">
       <div id="menu">
         <a href="#" id="menu-arrow">
-          <svg id="arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-          <style type="text/css">
-              .st0{fill:#f5f5f5;}
-          </style>
+          <svg id="arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:#f5f5f5;}
+            </style>
             <path class="st0" d="M21.698,15.286l-9.002-8.999  c-0.395-0.394-1.035-0.394-1.431,0c-0.395,0.394-0.395,1.034,0,1.428L19.553,16l-8.287,8.285c-0.395,0.394-0.395,1.034,0,1.429  c0.395,0.394,1.036,0.394,1.431,0l9.002-8.999C22.088,16.325,22.088,15.675,21.698,15.286z"/>
           </svg>
         </a>
@@ -148,7 +149,7 @@
               <form id="message-form" role="form">
                 <input type="text" id="search-user" name="search-user" placeholder="Search for User">
                 <textarea id="message-user" name="message-user" rows="4" placeholder="Message for User"></textarea>
-                <button id="send" id="send-btn" type="submit" name="send">Send</button>
+                <button id="send-btn" class="form-btn" type="submit" name="send-btn">Send</button>
               </form>
             </div>
           </div>
@@ -157,6 +158,67 @@
             <h3 class="section-title">Settings</h3>
             <div class="settings-container section-container">
               <form id="settings-form">
+                <div class="toggle-switch-container">
+                  <p>Send Email Notifications</p>
+                  <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="notification-switch">
+                    <label class="onoffswitch-label" for="notification-switch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="toggle-switch-container">
+                  <p>Set Profile to Public</p>
+                  <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="profile-switch">
+                    <label class="onoffswitch-label" for="profile-switch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="select-timezone-container">
+                  <select name="select-timezone" id="select-timezone">
+                    <option value="" disabled selected>Select Timezone</option>
+                    <option value="-12.0">(GMT -12:00) Eniwetok, Kwajalein</option>
+                    <option value="-11.0">(GMT -11:00) Midway Island, Samoa</option>
+                    <option value="-10.0">(GMT -10:00) Hawaii</option>
+                    <option value="-9.0">(GMT -9:00) Alaska</option>
+                    <option value="-8.0">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+                    <option value="-7.0">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+                    <option value="-6.0">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+                    <option value="-5.0">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+                    <option value="-4.0">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+                    <option value="-3.5">(GMT -3:30) Newfoundland</option>
+                    <option value="-3.0">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+                    <option value="-2.0">(GMT -2:00) Mid-Atlantic</option>
+                    <option value="-1.0">(GMT -1:00 hour) Azores, Cape Verde Islands</option>
+                    <option value="0.0">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+                    <option value="1.0">(GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris</option>
+                    <option value="2.0">(GMT +2:00) Kaliningrad, South Africa</option>
+                    <option value="3.0">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+                    <option value="3.5">(GMT +3:30) Tehran</option>
+                    <option value="4.0">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+                    <option value="4.5">(GMT +4:30) Kabul</option>
+                    <option value="5.0">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+                    <option value="5.5">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+                    <option value="5.75">(GMT +5:45) Kathmandu</option>
+                    <option value="6.0">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+                    <option value="7.0">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+                    <option value="8.0">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+                    <option value="9.0">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+                    <option value="9.5">(GMT +9:30) Adelaide, Darwin</option>
+                    <option value="10.0">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+                    <option value="11.0">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+                    <option value="12.0">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+                  </select>
+                  <img id="arrow-down" src="icons/icon-down.svg" alt="">
+                </div>
+                <div class="settings-buttons-container">
+                  <button id="save-btn" class="form-btn" type="button" name="save-btn">Save</button>
+                  <button id="cancel-btn" class="form-btn" type="reset" name="cancel-btn">Cancel</button>
+                </div>
               </form>
             </div>
           </div>

@@ -29,15 +29,20 @@ $(document).ready( () => {
   });
   
   // Mouse over event that adds a title attribute to paragraphs in the member sections if text is cutoff with an ellipsis
-  $('.member-info p').on('mouseover', function() {
-    if (this.offsetWidth < this.scrollWidth && !$(this).attr('title'))
-      {
-        $(this).attr('title', $(this).text());
-      }
+  $('.member-name').mouseenter(function (e) {
+    e.preventDefault();
+    let $this = $(this);
+
+    if (this.offsetWidth < this.scrollWidth && !$this.attr('title')) {
+        $this.attr('title', $this.text());
+    }
   });
   
   $('#message-form').on('click', 'button', (e) => {
     e.preventDefault();
+    
+    const removeIfExists = $('#confirmation');
+    if (removeIfExists) {removeIfExists.remove();}
     
     const messageForm = $('#message-form');
     const searchForUser = $('#search-user');
@@ -48,21 +53,23 @@ $(document).ready( () => {
     const confirmationId = 'confirmation';
     let noticeCl = '';
     let sentDialogHtml = '';
+    const sendBtn = $('#send-btn');
+    const messageSent = $('message-sent');
+    const messageError = $('message-error');
     
     if (userName.length > 0 && userMessage.length > 0) {
       noticeCl = 'message-sent';
       sentDialogHtml = 
-        `<div id="${confirmationId}" class="${noticeCl}">Your message to ${userName} has been sent.</div>`;
-      messageForm.append(sentDialogHtml);
+        $(`<div id="${confirmationId}" class="${noticeCl}">Your message to ${userName} has been sent.</div>`);
       messageForm.find("input[type=text], textarea").val("");
     } else {
       noticeCl = 'message-error';
       sentDialogHtml = 
-        `<div id="${confirmationId}" class="${noticeCl}">Your message cannot be sent. Please complete each field.</div>`;
-      messageForm.append(sentDialogHtml);
+        $(`<div id="${confirmationId}" class="${noticeCl}">Please complete each field before clicking send.</div>`);
     }
+    sentDialogHtml.insertBefore(sendBtn);
     systemNotice = $(`#${confirmationId}`);
-    systemNotice.delay(2500).fadeOut(500, () => {
+    systemNotice.delay(3000).fadeOut(500, () => {
       systemNotice.remove();
     });
     

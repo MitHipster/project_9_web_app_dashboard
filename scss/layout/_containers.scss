@@ -135,8 +135,40 @@ li.member-container {
 //---- Message User & Settings ----
 
 .message-settings-container {
+  @extend .supplemental-charts-container;
   .section-container {
-//    margin-bottom: 70px
+    @include charts {
+      border-bottom: none;
+    }
   }
 }
+
+
+
+//------------- Forms -------------
+
+form {
+  @include display-flex();
+  flex-direction: column;
+  flex: 1;
+  height: 260px;
+}
+
+
+
+//-------- Toggle Switches --------
+
+.toggle-switch-container {
+  @include display-flex(flex-start, center);
+  margin: 10px 0;
+}
+
+
+
+.settings-buttons-container {
+  @include display-flex(space-between);
+  margin-top: auto;
+}
+
+
 

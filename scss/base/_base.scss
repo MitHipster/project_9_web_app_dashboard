@@ -27,12 +27,8 @@ ul {
   list-style: none;
 }
 
-form {
-//  margin: 0 auto;
-//  display: inline-block;
-}
-
 input {
+  @include font-settings(1rem, 300, $color-text-light);
   border: $border;
   border-radius: 4px;
   padding: 5px 15px;
@@ -41,13 +37,24 @@ input {
   @extend %focus-state-input;
 }
 
+input::placeholder {
+  color: $color-text-light;
+}
+
 textarea {
   @extend input;
   resize: none;
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  @extend input;
+}
+
 button {
-  @include font-settings(0.9rem, 400, $color-text-inv-light);
+  @include font-settings(0.9rem, 400, $color-text-inv-dark);
   background: none;
   border: none;
   border-radius: 4px;
