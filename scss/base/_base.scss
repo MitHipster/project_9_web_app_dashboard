@@ -17,7 +17,7 @@ html {
 
 body {
   @extend %font-primary;
-  @include font-settings(1rem, 300, $color-text-dark);
+  @include font-settings(1rem, 300, $color-text);
   height: 100%;
   background-color: $color-nav;
   overflow-x: hidden;
@@ -28,7 +28,7 @@ ul {
 }
 
 input {
-  @include font-settings(1rem, 300, $color-text-light);
+  @include font-settings(1rem, 300, $color-text);
   border: $border;
   border-radius: 4px;
   padding: 5px 15px;
@@ -38,7 +38,7 @@ input {
 }
 
 input::placeholder {
-  color: $color-text-light;
+  color: $color-text;
 }
 
 textarea {

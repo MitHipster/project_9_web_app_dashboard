@@ -29,7 +29,7 @@ canvas.chart {
 
 .line-chart-title {
   margin-bottom: 5px;
-  @include font-settings(1rem, 500, $color-text-light);
+  @include font-settings(1rem, 500);
   text-transform: uppercase;
   @include mobile {
     margin-bottom: 0;

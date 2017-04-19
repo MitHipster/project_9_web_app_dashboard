@@ -18,7 +18,7 @@ main {
 
 
 .section-title {
-  @include font-settings(1rem, 500, $color-text-light);
+  @include font-settings(1rem, 500);
   text-transform: uppercase;
   padding: 20px $mobile-edge 0;
   @include tablet {

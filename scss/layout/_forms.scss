@@ -90,10 +90,11 @@
     background-color: $color-nav;
   }
   &#cancel-btn {
-    background-color: lighten($color-text-light, 10%);
+    color: $color-text-inv-light;
+    background-color: lighten($color-text, 15%);
     &:active {
-      color: $color-text-inv-light;
-      background-color: darken($color-text-light, 10%);
+      color: $color-text-inv-dark;
+      background-color: darken($color-text, 15%);
     }
   }
 }

@@ -1,17 +1,27 @@
 /*jslint esversion: 6, browser: true*/
 /*global window, console, $, jQuery, Chart, alert*/
 
+const alertContainer = $('.alert-container');
+const arrowMenu = $('arrow');
+
+// Hide alert notification and show after a short delay
+alertContainer.hide();
+
 // Make sure document is loaded and in the ready state before js executes
 $(document).ready( () => {
+  
+  // Fade in to simulate receiving an alert
+  alertContainer.delay(1500).fadeIn('slow');
+  
   // On click event that toggles the classes below to show/hide nav menu and rotate menu icon on smaller screens
-  $('#arrow').on('click', () => {
+  arrowMenu.on('click', () => {
     $('main').toggleClass('slide-right');
-    $('#arrow').toggleClass('rotate');
+    arrowMenu.toggleClass('rotate');
   });
 
   // Fade out alert message with close button is clicked
   $('#alert-btn').on('click', () => {
-    $('.alert-container').fadeOut(500);
+    alertContainer.fadeOut('slow');
   });
   
   // On click event for line chart buttons to switch labels and datasets based timescale selected
@@ -29,7 +39,7 @@ $(document).ready( () => {
   });
   
   // Mouse over event that adds a title attribute to paragraphs in the member sections if text is cutoff with an ellipsis
-  $('.member-name').mouseenter(function (e) {
+  $('.member-name').mouseover(function (e) {
     e.preventDefault();
     let $this = $(this);
 
