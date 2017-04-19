@@ -3,6 +3,7 @@
 
 const alertContainer = $('.alert-container');
 const arrowMenu = $('#arrow');
+const searchForUser = $('#search-user');
 
 // Hide alert notification and show after a short delay
 alertContainer.hide();
@@ -45,7 +46,6 @@ $(document).ready( () => {
     if (removeIfExists) {removeIfExists.remove();}
     
     const messageForm = $('#message-form');
-    const searchForUser = $('#search-user');
     let userName = searchForUser.val();
     const messageForUser = $('#message-user');
     let userMessage = messageForUser.val();

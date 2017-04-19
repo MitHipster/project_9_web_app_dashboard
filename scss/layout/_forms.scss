@@ -20,7 +20,7 @@
 
 .message-sent {
   height: 50px;
-  @include font-settings(1rem, 400, $color-text-inv-light);
+  @include font-settings(1rem, 300, $color-text-inv-light);
   line-height: 1.2;
   border-radius: 4px;
   background-color: $color-success;
@@ -42,7 +42,7 @@
 //  @include display-flex(space-between);
 //  flex-direction: column;
   p {
-    width: 200px;
+    width: 190px;
     font-weight: 500;
 //    margin: 20px 0;
   }
