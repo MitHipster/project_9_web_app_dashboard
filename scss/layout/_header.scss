@@ -5,24 +5,25 @@
 //------------- Header ------------
 
 header {
-  @include display-flex(space-between);
+  @include display-flex(space-between, center);
   height: 72px;
   background-color: $color-header;
   color: $color-text-inv-dark;
-  padding: 20px 15px 20px 5px;
+  padding: 0 $mobile-edge 0 5px;
   @include tablet {
-    padding: 20px 25px 20px 15px;
+    padding: 0 $tablet-edge 0 15px;
   }
 }
 
 .vertical-line {
+  height: 32px;
   border-left: $border-hdr;
 }
 
 #menu {
-  @include display-flex(flex-start);
+  @include display-flex(flex-start, center);
   a#menu-arrow {
-    @include icon-link(56px, 64px, -16px -4px 0 -8px, 12px 8px);
+    @include icon-link(40px, 64px, 0 5px 0 0, 12px 0);
     @include tablet {
       display: none;
     }
@@ -41,7 +42,7 @@ header {
   }
   #company {
     @include font-settings(1.3rem, 300);
-    margin: -2px 0 0 15px;
+    margin-left: 15px;
     strong {
       color: $color-text-inv-light;
     }
@@ -56,15 +57,15 @@ header {
 }
 
 #user {
-  @include display-flex(flex-end);
+  @include display-flex(flex-end, center);
   a#user-notice {
-    @include icon-link(56px, 64px, -16px 0 0 -8px, 18px 14px);
+    @include icon-link(56px, 64px, 0, 18px 14px);
     @include tablet {
-      @include icon-link(64px, 64px, -16px 0 0 -16px, 18px);
+      @include icon-link(64px, 64px, 0, 18px);
     }
   }
   #user-photo {
-    width: 32px;
+    width: 36px;
     height: 32px;
     margin-left: 15px;
     border-radius: 50%;
@@ -75,10 +76,9 @@ header {
   }
   #user-name {
     display: none;
-    @include tablet {
+    @include charts {
       display: block;
       margin: 0;
-      padding-top: 4px;
       padding-left: 10px;
     }
   }
