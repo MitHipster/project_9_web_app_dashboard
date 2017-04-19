@@ -337,14 +337,14 @@ form {
 /* line 7, ../scss/layout/_navigation.scss */
 nav {
   position: absolute;
-  width: 88px;
+  width: 72px;
   padding-top: 10px; }
   /* line 11, ../scss/layout/_navigation.scss */
   nav a.nav-links {
     display: block;
     width: 64px;
     height: 64px;
-    margin: 12px;
+    margin: 12px 4px;
     padding: 16px;
     opacity: 0.5;
     transition: opacity .3s ease-out, transform .4s ease-out; }
@@ -353,6 +353,10 @@ nav {
       outline: 0 none;
       opacity: 1;
       transform: scale(1.1); }
+  /* line 14, ../scss/layout/_navigation.scss */
+  nav a.selected {
+    border-left: 3px solid lime;
+    padding-left: 13px; }
   @media (min-width: 768px) {
     /* line 7, ../scss/layout/_navigation.scss */
     nav {
@@ -367,7 +371,7 @@ main {
   transition: transform .5s; }
   /* line 13, ../scss/layout/_main.scss */
   main.slide-right {
-    transform: translateX(88px); }
+    transform: translateX(72px); }
 
 /* line 20, ../scss/layout/_main.scss */
 .section-title {

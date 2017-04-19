@@ -2,7 +2,7 @@
 /*global window, console, $, jQuery, Chart, alert*/
 
 const alertContainer = $('.alert-container');
-const arrowMenu = $('arrow');
+const arrowMenu = $('#arrow');
 
 // Hide alert notification and show after a short delay
 alertContainer.hide();
@@ -38,16 +38,6 @@ $(document).ready( () => {
     lineChart.update();
   });
   
-  // Mouse over event that adds a title attribute to paragraphs in the member sections if text is cutoff with an ellipsis
-  $('.member-name').mouseover(function (e) {
-    e.preventDefault();
-    let $this = $(this);
-
-    if (this.offsetWidth < this.scrollWidth && !$this.attr('title')) {
-        $this.attr('title', $this.text());
-    }
-  });
-  
   $('#message-form').on('click', 'button', (e) => {
     e.preventDefault();
     
@@ -79,7 +69,7 @@ $(document).ready( () => {
     }
     sentDialogHtml.insertBefore(sendBtn);
     systemNotice = $(`#${confirmationId}`);
-    systemNotice.delay(3000).fadeOut(500, () => {
+    systemNotice.delay(3000).fadeOut('slow', () => {
       systemNotice.remove();
     });
     
@@ -324,6 +314,6 @@ let memberHtml = (member, section, i) => {
           ${other}
         </div>
       </li>`;
-  console.log(html);
+
   return html;
 };
