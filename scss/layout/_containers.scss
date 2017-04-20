@@ -69,11 +69,14 @@
 
 //---------- Social Stats ---------
 
-.inner-social-container {
-  margin-top: 10px;
-  @include mobile {
-    @include display-flex(space-between);
-    flex-wrap: wrap;
+.social-stats-container {
+  padding-bottom: 10px;
+    .inner-social-container {
+    margin-top: 10px;
+    @include mobile {
+      @include display-flex(space-between);
+      flex-wrap: wrap;
+    }
   }
 }
 
@@ -136,6 +139,9 @@ li.member-container {
 
 .message-settings-container {
   @extend .supplemental-charts-container;
+  .settings-container.section-container {
+    border-bottom: none;
+  }
   .section-container {
     @include charts {
       border-bottom: none;
