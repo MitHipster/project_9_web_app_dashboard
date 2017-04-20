@@ -5,6 +5,9 @@ const alertContainer = $('.alert-container');
 const arrowMenu = $('#arrow');
 const searchForUser = $('#search-user');
 let searchForUserData = [];
+let settingNotifications = $('#notification-switch');
+let settingProfilePublic = $('#profile-switch');
+let settingTimezone = $('#select-timezone');
 
 // Hide alert notification and show after a short delay
 alertContainer.hide();
@@ -83,17 +86,51 @@ $(document).ready( () => {
     minLength: 1,
     position: { my: "left top", at: "left bottom", collision: "flip" }
   });
+  
+  $('#save-btn').on('click', (e) => {
+    e.preventDefault();
+    let notificationsStatus = settingNotifications.prop('checked');
+    let profileStatus = settingProfilePublic.prop('checked');
+    let timezoneValue = settingTimezone.val();
+    localStorage.setItem('notifications', JSON.stringify(notificationsStatus));
+    localStorage.setItem('profile', JSON.stringify(profileStatus));
+    localStorage.setItem('timezone', JSON.stringify(timezoneValue));
+  });
+  
+  $('#reset-btn').on('click', () => {
+    localStorage.clear();
+  });
 
 });
+
+$(window).on("load", () => {
+  if (supportsLocalStorage) {
+    let notificationsStatus = JSON.parse(localStorage.getItem('notifications'));
+    let profileStatus = JSON.parse(localStorage.getItem('profile'));
+    let timezoneValue = JSON.parse(localStorage.getItem('timezone'));
+    settingNotifications.prop('checked', notificationsStatus);
+    settingProfilePublic.prop('checked', profileStatus);
+    settingTimezone.val(timezoneValue);
+    console.log(timezoneValue);
+  }
+});
+
+let supportsLocalStorage = () => {
+  try {
+    return 'localStorage' in window && window.localStorage !== null;
+  } catch (e) {
+    return false;
+  }
+};
 
 // Global chart defaults
 const colorMain = '#3e5c76'; // $deep-space
 const colorSecond = '#1fad3b'; // $forest-green
-const colorThird = '#327c5e'; // Amazon
+const colorThird = '#327c5e'; // $amazon
 const colorAccent = '#f5f5f5';
 const colorFill = 'rgba(62, 92, 118, 0.4)'; // $deep-space (#3e5c76)
 const fontStack = "'Open Sans', sans-serif";
-const fontColor = '#696969';
+const fontColor = '#505050'; // $emperor
 const fontSize = 13;
 
 Chart.defaults.global.defaultFontColor = fontColor;

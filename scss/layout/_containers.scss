@@ -151,17 +151,6 @@ li.member-container {
 
 
 
-//------------- Forms -------------
-
-form {
-  @include display-flex();
-  flex-direction: column;
-  flex: 1;
-  height: 260px;
-}
-
-
-
 //-------- Toggle Switches --------
 
 .toggle-switch-container {

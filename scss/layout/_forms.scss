@@ -23,9 +23,9 @@
   @include font-settings(1rem, 300, $color-text-inv-light);
   line-height: 1.2;
   border-radius: 4px;
-  background-color: $color-success;
+  background-color: $amazon;
   border: $border;
-  padding: 5px 15px;
+  padding: 6px 15px 0;
   margin-bottom: 20px !important;
 }
 
@@ -70,7 +70,7 @@
     z-index: -10;
     width: 28px;
     height: 28px;
-    margin-left: -3px;
+    margin-left: -5px;
   }
 }
 
@@ -89,7 +89,7 @@
     color: $color-text-inv-light;
     background-color: $color-nav;
   }
-  &#cancel-btn {
+  &#reset-btn {
     color: $color-text-inv-light;
     background-color: lighten($color-text, 15%);
     &:active {

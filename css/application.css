@@ -32,7 +32,7 @@ html {
 body {
   font-size: 1rem;
   font-weight: 300;
-  color: #696969;
+  color: #505050;
   height: 100%;
   background-color: #1d2d44;
   overflow-x: hidden; }
@@ -42,30 +42,37 @@ ul {
   list-style: none; }
 
 /* line 30, ../scss/base/_base.scss */
+form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 260px; }
+
+/* line 37, ../scss/base/_base.scss */
 input, textarea, select {
   font-size: 1rem;
   font-weight: 300;
-  color: #696969;
+  color: #505050;
   border: 1px solid rgba(116, 140, 171, 0.5);
   border-radius: 4px;
   padding: 5px 15px;
   background-color: #f5f5f5; }
 
-/* line 40, ../scss/base/_base.scss */
+/* line 47, ../scss/base/_base.scss */
 input::placeholder, textarea::placeholder, select::placeholder {
-  color: #696969; }
+  color: #505050; }
 
-/* line 44, ../scss/base/_base.scss */
+/* line 51, ../scss/base/_base.scss */
 textarea {
   resize: none; }
 
-/* line 49, ../scss/base/_base.scss */
+/* line 56, ../scss/base/_base.scss */
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none; }
 
-/* line 56, ../scss/base/_base.scss */
+/* line 63, ../scss/base/_base.scss */
 button {
   font-size: 0.9rem;
   font-weight: 400;
@@ -74,7 +81,7 @@ button {
   border: none;
   border-radius: 4px; }
 
-/* line 71, ../scss/base/_base.scss */
+/* line 78, ../scss/base/_base.scss */
 .clearfix:after {
   content: " ";
   display: table;
@@ -324,20 +331,13 @@ li.member-container {
     border-bottom: none; } }
 
 /* line 156, ../scss/layout/_containers.scss */
-form {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  height: 260px; }
-
-/* line 167, ../scss/layout/_containers.scss */
 .toggle-switch-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 10px 0; }
 
-/* line 174, ../scss/layout/_containers.scss */
+/* line 163, ../scss/layout/_containers.scss */
 .settings-buttons-container {
   display: flex;
   justify-content: space-between;
@@ -447,9 +447,10 @@ span#alert-tag {
 /* line 10, ../scss/layout/_alert.scss */
 #alert-message {
   flex-grow: 1;
-  line-height: 1.2; }
+  line-height: 1.2;
+  padding-top: 1px; }
 
-/* line 15, ../scss/layout/_alert.scss */
+/* line 16, ../scss/layout/_alert.scss */
 #alert-btn {
   font-size: 1rem;
   font-weight: 500;
@@ -660,9 +661,9 @@ canvas.chart {
   color: #f5f5f5;
   line-height: 1.2;
   border-radius: 4px;
-  background-color: #1fad3b;
+  background-color: #327c5e;
   border: 1px solid rgba(116, 140, 171, 0.5);
-  padding: 5px 15px;
+  padding: 6px 15px 0;
   margin-bottom: 20px !important; }
 
 /* line 32, ../scss/layout/_forms.scss */
@@ -697,7 +698,7 @@ canvas.chart {
     z-index: -10;
     width: 28px;
     height: 28px;
-    margin-left: -3px; }
+    margin-left: -5px; }
 
 /* line 81, ../scss/layout/_forms.scss */
 .form-btn {
@@ -711,12 +712,12 @@ canvas.chart {
     color: #f5f5f5;
     background-color: #1d2d44; }
   /* line 92, ../scss/layout/_forms.scss */
-  .form-btn#cancel-btn {
+  .form-btn#reset-btn {
     color: #f5f5f5;
-    background-color: #8f8f8f; }
+    background-color: #767676; }
     /* line 95, ../scss/layout/_forms.scss */
-    .form-btn#cancel-btn:active {
+    .form-btn#reset-btn:active {
       color: #d3d3d3;
-      background-color: #434343; }
+      background-color: #2a2a2a; }
 
 /*# sourceMappingURL=application.css.map */
