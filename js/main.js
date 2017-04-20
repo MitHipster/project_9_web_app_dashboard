@@ -4,6 +4,7 @@
 const alertContainer = $('.alert-container');
 const arrowMenu = $('#arrow');
 const searchForUser = $('#search-user');
+let searchForUserData = [];
 
 // Hide alert notification and show after a short delay
 alertContainer.hide();
@@ -73,6 +74,14 @@ $(document).ready( () => {
       systemNotice.remove();
     });
     
+  });
+  
+  searchForUser.autocomplete({
+    source: searchForUserData,
+    autoFocus: true,
+    delay: 0,
+    minLength: 1,
+    position: { my: "left top", at: "left bottom", collision: "flip" }
   });
 
 });
@@ -261,19 +270,30 @@ const innerActivityContainer = $('.inner-activity-container');
 let signupDate = $.format.date($.now(), "M/d/yy");
 
 $.ajax({
-  url: 'https://randomuser.me/api/?nat=us&results=4&inc=picture,name,email&noinfo',
+  url: 'https://randomuser.me/api/?nat=us&results=50&inc=picture,name,email&noinfo',
   dataType: 'json',
   success: (data) => {
     members = data;
     
     $.each(members.results, (i) => {
+      let firstName = properCase(members.results[i].name.first);
+      let lastName = properCase(members.results[i].name.last);
+      let name = firstName + " " + lastName;
+      searchForUserData.push(name);
+    });
+    
+    searchForUserData.sort();
+    
+    $.each(members.results, (i) => {
       let member = members.results[i];
       innerMembersContainer.append(memberHtml(member, memberSection));
+      return (i !== 3);
     });
     
     $.each(members.results, (i) => {
       let activity = members.results[i];
       innerActivityContainer.append(memberHtml(activity, activitySection, i));
+      return (i !== 3);
     });
   }
 });

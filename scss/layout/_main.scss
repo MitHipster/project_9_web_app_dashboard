@@ -10,6 +10,7 @@ main {
   background: $color-background;
   transform: translateX(0);
   transition: transform .5s;
+  padding-bottom: 50px;
   &.slide-right {
     transform: translateX(72px);
   }

@@ -370,12 +370,13 @@ main {
   width: 100%;
   background: #f5f2e6;
   transform: translateX(0);
-  transition: transform .5s; }
-  /* line 13, ../scss/layout/_main.scss */
+  transition: transform .5s;
+  padding-bottom: 50px; }
+  /* line 14, ../scss/layout/_main.scss */
   main.slide-right {
     transform: translateX(72px); }
 
-/* line 20, ../scss/layout/_main.scss */
+/* line 21, ../scss/layout/_main.scss */
 .section-title {
   font-size: 1rem;
   font-weight: 500;
@@ -383,7 +384,7 @@ main {
   text-transform: uppercase;
   padding: 20px 10px 0; }
   @media (min-width: 768px) {
-    /* line 20, ../scss/layout/_main.scss */
+    /* line 21, ../scss/layout/_main.scss */
     .section-title {
       padding: 25px 20px 0; } }
 
