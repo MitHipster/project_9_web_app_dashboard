@@ -2,15 +2,15 @@
 body {
   font-family: "Catamaran", sans-serif; }
 
-/* line 11, ../scss/utilities/_extends.scss */
+/* line 12, ../scss/utilities/_extends.scss */
 input:focus, textarea:focus, select:focus, .search-container #search-btn:focus {
   box-shadow: inset 0 0 5px #1d2d44; }
 
-/* line 21, ../scss/utilities/_extends.scss */
+/* line 22, ../scss/utilities/_extends.scss */
 button:focus {
   box-shadow: 0 0 5px 1px #1d2d44; }
 
-/* line 30, ../scss/utilities/_extends.scss */
+/* line 31, ../scss/utilities/_extends.scss */
 input, textarea, select, button {
   outline: none;
   transition: box-shadow .4s ease-out, background-color .4s ease-out; }
@@ -96,16 +96,20 @@ header {
       padding: 0 20px 0 15px; } }
 
 /* line 19, ../scss/layout/_header.scss */
+.inline-svg {
+  fill: #f5f5f5; }
+
+/* line 23, ../scss/layout/_header.scss */
 .vertical-line {
   height: 32px;
   border-left: 1px solid rgba(211, 211, 211, 0.7); }
 
-/* line 24, ../scss/layout/_header.scss */
+/* line 28, ../scss/layout/_header.scss */
 #menu {
   display: flex;
   justify-content: flex-start;
   align-items: center; }
-  /* line 26, ../scss/layout/_header.scss */
+  /* line 30, ../scss/layout/_header.scss */
   #menu a#menu-arrow {
     display: block;
     width: 40px;
@@ -120,46 +124,46 @@ header {
       opacity: 1;
       transform: scale(1.1); }
     @media (min-width: 768px) {
-      /* line 26, ../scss/layout/_header.scss */
+      /* line 30, ../scss/layout/_header.scss */
       #menu a#menu-arrow {
         display: none; } }
-  /* line 32, ../scss/layout/_header.scss */
+  /* line 36, ../scss/layout/_header.scss */
   #menu svg#arrow {
     display: inline-block;
     transition: transform .5s; }
-    /* line 35, ../scss/layout/_header.scss */
+    /* line 39, ../scss/layout/_header.scss */
     #menu svg#arrow.rotate {
       transform: rotate(180deg); }
   @media (min-width: 768px) {
-    /* line 39, ../scss/layout/_header.scss */
+    /* line 43, ../scss/layout/_header.scss */
     #menu .vertical-line {
       display: none; } }
-  /* line 44, ../scss/layout/_header.scss */
+  /* line 48, ../scss/layout/_header.scss */
   #menu #company {
     font-size: 1.3rem;
     font-weight: 300;
     color: inherit;
     margin-left: 15px; }
-    /* line 47, ../scss/layout/_header.scss */
+    /* line 51, ../scss/layout/_header.scss */
     #menu #company strong {
       color: #f5f5f5; }
-    /* line 50, ../scss/layout/_header.scss */
+    /* line 54, ../scss/layout/_header.scss */
     #menu #company span {
       font-size: 0.9rem;
       font-weight: 300;
       color: inherit;
       vertical-align: super; }
     @media (min-width: 768px) {
-      /* line 44, ../scss/layout/_header.scss */
+      /* line 48, ../scss/layout/_header.scss */
       #menu #company {
         margin-left: 10px; } }
 
-/* line 60, ../scss/layout/_header.scss */
+/* line 68, ../scss/layout/_header.scss */
 #user {
   display: flex;
   justify-content: flex-end;
   align-items: center; }
-  /* line 62, ../scss/layout/_header.scss */
+  /* line 70, ../scss/layout/_header.scss */
   #user a#user-notice {
     display: block;
     width: 56px;
@@ -174,7 +178,7 @@ header {
       opacity: 1;
       transform: scale(1.1); }
     @media (min-width: 768px) {
-      /* line 62, ../scss/layout/_header.scss */
+      /* line 70, ../scss/layout/_header.scss */
       #user a#user-notice {
         display: block;
         width: 64px;
@@ -188,7 +192,7 @@ header {
           outline: 0 none;
           opacity: 1;
           transform: scale(1.1); } }
-  /* line 68, ../scss/layout/_header.scss */
+  /* line 76, ../scss/layout/_header.scss */
   #user #user-photo {
     width: 36px;
     height: 32px;
@@ -196,20 +200,20 @@ header {
     border-radius: 50%;
     border: 1px solid rgba(116, 140, 171, 0.5); }
     @media (min-width: 768px) {
-      /* line 68, ../scss/layout/_header.scss */
+      /* line 76, ../scss/layout/_header.scss */
       #user #user-photo {
         margin-left: 20px; } }
-  /* line 78, ../scss/layout/_header.scss */
+  /* line 86, ../scss/layout/_header.scss */
   #user #user-name {
     display: none; }
     @media (min-width: 600px) {
-      /* line 78, ../scss/layout/_header.scss */
+      /* line 86, ../scss/layout/_header.scss */
       #user #user-name {
         display: block;
         margin: 0;
         padding-left: 10px; } }
 
-/* line 88, ../scss/layout/_header.scss */
+/* line 100, ../scss/layout/_header.scss */
 #user-notifications {
   font-size: 0.9rem;
   font-weight: 400;
@@ -221,10 +225,10 @@ header {
   background-color: #f5f2e6;
   box-shadow: 0 0 70px 0 rgba(80, 80, 80, 0.3); }
   @media (min-width: 600px) {
-    /* line 88, ../scss/layout/_header.scss */
+    /* line 100, ../scss/layout/_header.scss */
     #user-notifications {
       right: 135px; } }
-  /* line 99, ../scss/layout/_header.scss */
+  /* line 111, ../scss/layout/_header.scss */
   #user-notifications .notification {
     display: flex;
     justify-content: space-between;
@@ -232,7 +236,7 @@ header {
     border-bottom: 1px solid rgba(116, 140, 171, 0.5);
     height: 48px;
     padding-left: 15px; }
-    /* line 104, ../scss/layout/_header.scss */
+    /* line 116, ../scss/layout/_header.scss */
     #user-notifications .notification::before {
       content: "";
       display: inline-block;
@@ -242,12 +246,12 @@ header {
       background: #1fad3b;
       margin-top: -1px;
       margin-right: 10px; }
-    /* line 114, ../scss/layout/_header.scss */
+    /* line 126, ../scss/layout/_header.scss */
     #user-notifications .notification p {
       flex: 1;
       line-height: 0.9; }
 
-/* line 121, ../scss/layout/_header.scss */
+/* line 137, ../scss/layout/_header.scss */
 .close-btn {
   font-size: 1rem;
   font-weight: 500;
@@ -256,7 +260,7 @@ header {
   height: 32px !important;
   margin: 4px 4px 4px 8px;
   padding-top: 2px; }
-  /* line 127, ../scss/layout/_header.scss */
+  /* line 143, ../scss/layout/_header.scss */
   .close-btn:focus, .close-btn:hover {
     box-shadow: none;
     background-color: #ad1f4a;
@@ -425,11 +429,11 @@ main {
   transform: translateX(0);
   transition: transform .5s;
   padding-bottom: 50px; }
-  /* line 14, ../scss/layout/_main.scss */
+  /* line 13, ../scss/layout/_main.scss */
   main.slide-right {
     transform: translateX(72px); }
 
-/* line 21, ../scss/layout/_main.scss */
+/* line 18, ../scss/layout/_main.scss */
 .section-title {
   font-size: 1rem;
   font-weight: 500;
@@ -437,7 +441,7 @@ main {
   text-transform: uppercase;
   padding: 20px 10px 0; }
   @media (min-width: 768px) {
-    /* line 21, ../scss/layout/_main.scss */
+    /* line 18, ../scss/layout/_main.scss */
     .section-title {
       padding: 25px 20px 0; } }
 
@@ -535,38 +539,39 @@ canvas.chart {
   @media (min-width: 480px) {
     /* line 30, ../scss/layout/_charts.scss */
     .line-chart-title {
+      margin-top: 3px;
       margin-bottom: 0; } }
 
-/* line 40, ../scss/layout/_charts.scss */
+/* line 41, ../scss/layout/_charts.scss */
 .line-chart-options {
   padding: 20px 10px 0;
   margin-bottom: -10px; }
   @media (min-width: 480px) {
-    /* line 40, ../scss/layout/_charts.scss */
+    /* line 41, ../scss/layout/_charts.scss */
     .line-chart-options {
       display: flex;
       justify-content: space-between;
       padding: 20px 10px 0; } }
   @media (min-width: 768px) {
-    /* line 40, ../scss/layout/_charts.scss */
+    /* line 41, ../scss/layout/_charts.scss */
     .line-chart-options {
       padding: 25px 20px 0; } }
 
-/* line 52, ../scss/layout/_charts.scss */
+/* line 53, ../scss/layout/_charts.scss */
 .line-chart-timescale {
   display: flex;
   justify-content: flex-end;
   position: relative;
   z-index: 100; }
-  /* line 56, ../scss/layout/_charts.scss */
+  /* line 57, ../scss/layout/_charts.scss */
   .line-chart-timescale button {
     width: 68px;
     height: 26px;
     background-color: #3e5c76;
     border-radius: 15px;
-    margin-left: 7px;
+    margin: 3px 4px;
     padding-top: 2px; }
-    /* line 63, ../scss/layout/_charts.scss */
+    /* line 64, ../scss/layout/_charts.scss */
     .line-chart-timescale button.active {
       color: #f5f5f5;
       background-color: #1fad3b; }
@@ -698,32 +703,32 @@ form {
   flex: 1;
   height: 260px; }
 
-/* line 18, ../scss/layout/_forms.scss */
+/* line 20, ../scss/layout/_forms.scss */
 #message-form * {
   width: 100%;
   margin: 10px 0; }
-/* line 22, ../scss/layout/_forms.scss */
+/* line 24, ../scss/layout/_forms.scss */
 #message-form #message-user {
   flex-shrink: 1; }
-/* line 25, ../scss/layout/_forms.scss */
+/* line 27, ../scss/layout/_forms.scss */
 #message-form button#send-btn {
   flex-shrink: 0;
   margin: auto 0 0; }
 
-/* line 31, ../scss/layout/_forms.scss */
+/* line 33, ../scss/layout/_forms.scss */
 .message-sent, .message-error {
   height: 50px;
   font-size: 1rem;
   font-weight: 300;
   color: #f5f5f5;
-  line-height: 1.2;
+  line-height: 1.2rem;
   border-radius: 4px;
   background-color: #327c5e;
   border: 1px solid rgba(116, 140, 171, 0.5);
-  padding: 6px 15px 0;
+  padding: 6px 15px 4px;
   margin-bottom: 20px !important; }
 
-/* line 42, ../scss/layout/_forms.scss */
+/* line 44, ../scss/layout/_forms.scss */
 .message-error {
   background-color: #ad1f4a; }
 
@@ -731,11 +736,11 @@ form {
 #settings-form p {
   width: 190px;
   font-weight: 500; }
-/* line 59, ../scss/layout/_forms.scss */
+/* line 58, ../scss/layout/_forms.scss */
 #settings-form button {
   width: 48%; }
 
-/* line 64, ../scss/layout/_forms.scss */
+/* line 63, ../scss/layout/_forms.scss */
 .select-timezone-container {
   position: relative;
   background-color: #f5f5f5;
@@ -744,12 +749,12 @@ form {
   align-items: center;
   z-index: 10;
   margin-top: 10px; }
-  /* line 71, ../scss/layout/_forms.scss */
+  /* line 69, ../scss/layout/_forms.scss */
   .select-timezone-container #select-timezone {
     width: 100%;
     background-color: transparent;
     padding-right: 30px; }
-  /* line 78, ../scss/layout/_forms.scss */
+  /* line 74, ../scss/layout/_forms.scss */
   .select-timezone-container img#arrow-down {
     position: absolute;
     z-index: -10;
@@ -757,22 +762,22 @@ form {
     height: 28px;
     margin-left: -5px; }
 
-/* line 91, ../scss/layout/_forms.scss */
+/* line 87, ../scss/layout/_forms.scss */
 .form-btn {
   height: 48px;
   text-transform: uppercase;
   background-color: #3e5c76;
   padding-top: 2px;
   font-size: 1rem; }
-  /* line 98, ../scss/layout/_forms.scss */
+  /* line 93, ../scss/layout/_forms.scss */
   .form-btn:active {
     color: #f5f5f5;
     background-color: #1d2d44; }
-  /* line 102, ../scss/layout/_forms.scss */
+  /* line 97, ../scss/layout/_forms.scss */
   .form-btn#reset-btn {
     color: #f5f5f5;
     background-color: #767676; }
-    /* line 105, ../scss/layout/_forms.scss */
+    /* line 100, ../scss/layout/_forms.scss */
     .form-btn#reset-btn:active {
       color: #d3d3d3;
       background-color: #2a2a2a; }
