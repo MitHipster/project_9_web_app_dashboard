@@ -99,10 +99,6 @@ const donutDataSet = {
   donutBackColor: [colorThird, colorSecond, colorMain]
 };
 
-// Hide alert and user notifications
-alertContainer.hide();
-userNotifications.hide();
-
 $(document).ready( () => {
   
   // Fade in to simulate receiving an alert notification
