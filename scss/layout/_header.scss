@@ -6,6 +6,7 @@
 
 header {
   @include display-flex(space-between, center);
+  position: relative;
   height: 72px;
   background-color: $color-header;
   color: $color-text-inv-dark;
@@ -81,5 +82,51 @@ header {
       margin: 0;
       padding-left: 10px;
     }
+  }
+}
+
+#user-notifications {
+  @include font-settings(0.9rem, 400, $color-text);
+  position: absolute;
+  top: 65px;
+  right: 45px;
+  z-index: 100;
+  background-color: $color-background;
+  box-shadow: $shadow;
+  @include charts {
+    right: 135px;
+  }
+  .notification {
+    @include display-flex(space-between, center);
+    border-bottom: $border;
+    height: 48px;
+    padding-left: 15px;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: $color-btn-state;
+      margin-top: -1px;
+      margin-right: 10px;
+    }
+    p {
+      flex: 1;
+      line-height: 0.9;
+    }
+  }
+}
+
+.close-btn {
+  @include font-settings(1rem, 500);
+  width: 32px !important;
+  height: 32px !important;
+  margin: 4px 4px 4px 8px;
+  padding-top: 2px;
+  &:focus, &:hover {
+    box-shadow: none;
+    background-color: $maroon-flush;
+    color: $color-text-inv-light;
   }
 }

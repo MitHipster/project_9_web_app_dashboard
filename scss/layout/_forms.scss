@@ -2,6 +2,16 @@
 // Form Styles
 //============================================================
 
+
+//------------- Forms -------------
+
+form {
+  @include display-flex();
+  flex-direction: column;
+  flex: 1;
+  height: 260px;
+}
+
 //--------- Message User ----------
 
 #message-form {

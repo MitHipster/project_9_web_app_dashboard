@@ -1,8 +1,8 @@
 /*jslint esversion: 6, browser: true*/
 /*global window, console, $, jQuery, Chart, alert*/
 
+const userNotifications = $('#user-notifications');
 const alertContainer = $('.alert-container');
-const arrowMenu = $('#arrow');
 const searchForUser = $('#search-user');
 let searchForUserData = [];
 let settingNotifications = $('#notification-switch');
@@ -11,22 +11,29 @@ let settingTimezone = $('#select-timezone');
 
 // Hide alert notification and show after a short delay
 alertContainer.hide();
+userNotifications.hide();
 
 // Make sure document is loaded and in the ready state before js executes
 $(document).ready( () => {
   
   // Fade in to simulate receiving an alert
-  alertContainer.delay(1500).fadeIn('slow');
+  alertContainer.delay(1500).slideDown(400);
   
   // On click event that toggles the classes below to show/hide nav menu and rotate menu icon on smaller screens
-  arrowMenu.on('click', () => {
+  $('#arrow').on('click', function () {
     $('main').toggleClass('slide-right');
-    arrowMenu.toggleClass('rotate');
+    $(this).toggleClass('rotate');
   });
 
+  $('#user-notice').on('click', function () {
+    $('#new-notification').hide();
+    userNotifications.slideToggle(400);
+  });
+  
   // Fade out alert message with close button is clicked
-  $('#alert-btn').on('click', () => {
-    alertContainer.fadeOut('slow');
+  $('.close-btn').on('click', function () {
+    $(this).css('outline', 'none');
+    $(this).parent().slideUp(400);
   });
   
   // On click event for line chart buttons to switch labels and datasets based timescale selected

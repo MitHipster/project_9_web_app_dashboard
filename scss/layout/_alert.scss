@@ -4,17 +4,19 @@
 
 span#alert-tag {
   font-weight: 500;
-  padding: 0 15px;
+  padding: 0 10px;
+  @include mobile {
+    padding: 0 15px;
+  }
+  @include tablet {
+    font-size: 1rem;
+  }
 }
 
 #alert-message {
   flex-grow: 1;
   line-height: 1.2;
-  padding-top: 1px;
-}
-  
-#alert-btn {
-  @include font-settings(1rem, 500);
-  height: 40px !important;
-  padding: 0 15px;
+  @include tablet {
+    font-size: 1rem;
+  }
 }

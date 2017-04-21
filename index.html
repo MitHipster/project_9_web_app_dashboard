@@ -20,17 +20,45 @@
             <style type="text/css">
                 .st0{fill:#f5f5f5;}
             </style>
-            <path class="st0" d="M21.698,15.286l-9.002-8.999  c-0.395-0.394-1.035-0.394-1.431,0c-0.395,0.394-0.395,1.034,0,1.428L19.553,16l-8.287,8.285c-0.395,0.394-0.395,1.034,0,1.429  c0.395,0.394,1.036,0.394,1.431,0l9.002-8.999C22.088,16.325,22.088,15.675,21.698,15.286z"/>
+            <path class="st0" d="M21.698,15.286l-9.002-8.999 c-0.395-0.394-1.035-0.394-1.431,0c-0.395,0.394-0.395,1.034,0,1.428L19.553,16l-8.287,8.285c-0.395,0.394-0.395,1.034,0,1.429 c0.395,0.394,1.036,0.394,1.431,0l9.002-8.999C22.088,16.325,22.088,15.675,21.698,15.286z"/>
           </svg>
         </a>
         <div class="vertical-line"></div>
         <h1 id="company"><strong>WEB</strong>analytics<span>&trade;</span></h1>
       </div>
       <div id="user">
-        <a href="#" id="user-notice"><img id="bell" src="icons/icon-bell.svg" alt="bell icon signals users that new notifications are available"></a>
+        <a href="#" id="user-notice">
+          <svg id="bell" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-2 -2 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+            <style type="text/css">
+              .st0{fill:#f5f5f5;}
+            </style>
+            <g>
+              <g>
+                <path class="st0" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28 c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
+                <circle id="new-notification" cx="21" cy="4" r="6" fill="lime"/>
+              </g>
+            </g>
+          </svg>
+        </a>
         <div class="vertical-line"></div>
         <img id="user-photo" src="img/user-photo.jpg" title="Josh Sullivan" alt="user profile image"> 
         <p id="user-name">Josh Sullivan</p>
+      </div>
+      <div id="user-notifications">
+        <ul>
+          <li class="notification">
+            <p>You have 6 unread messages</p>
+            <button type="button" class="close-btn notification-btn">X</button>
+          </li>
+          <li class="notification">
+            <p>You have 3 new followers</p>
+            <button type="button" class="close-btn notification-btn">X</button>
+          </li>
+          <li class="notification">
+            <p>Your password expires in 7 days</p>
+            <button type="button" class="close-btn notification-btn">X</button>
+          </li>
+        </ul>
       </div>
     </header>
     
@@ -56,8 +84,8 @@
         </div>
         <div class="alert-container">
           <span id="alert-tag">Alert</span>
-          <p id="alert-message">Chart data is from Saturday due to an overnight system update.</p>
-          <button type="button" id="alert-btn" value="alert" name="alert-btn">X</button>
+          <p id="alert-message">Chart data is from Saturday due to a system update that ran overnight.</p>
+          <button type="button" class="close-btn alert-btn">X</button>
         </div>
           <div class="line-chart-options">
             <h3 class="line-chart-title">Traffic</h3>

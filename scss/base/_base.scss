@@ -27,13 +27,6 @@ ul {
   list-style: none;
 }
 
-form {
-  @include display-flex();
-  flex-direction: column;
-  flex: 1;
-  height: 260px;
-}
-
 input {
   @include font-settings(1rem, 300, $color-text);
   border: $border;
