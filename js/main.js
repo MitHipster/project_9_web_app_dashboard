@@ -98,122 +98,118 @@ const donutDataSet = {
   donutData: [2000, 1750, 10000],
   donutBackColor: [colorThird, colorSecond, colorMain]
 };
+  
+// Fade in to simulate receiving an alert notification
+alertContainer.delay(1500).slideDown(400);
 
-$(document).ready( () => {
-  
-  // Fade in to simulate receiving an alert notification
-  alertContainer.delay(1500).slideDown(400);
-  
-  // Click event that toggles the classes below to show/hide nav menu and rotate menu icon on smaller screens
-  $('#arrow').on('click', function () {
-    $('main').toggleClass('slide-right');
-    $(this).toggleClass('rotate');
-  });
+// Click event that toggles the classes below to show/hide nav menu and rotate menu icon on smaller screens
+$('#arrow').on('click', function () {
+  $('main').toggleClass('slide-right');
+  $(this).toggleClass('rotate');
+});
 
-  // Click event that hides green dot that denotes a new notification and shows/hides user notifications
-  $('#user-notice').on('click', function () {
-    $('#new-notification').hide();
-    userNotifications.slideToggle(400);
-  });
-  
-  // Fade out alert message/user notifications when close button is clicked
-  $('.close-btn').on('click', function () {
-    $(this).css('outline', 'none');
-    $(this).parent().slideUp(300);
-  });
-  
-  // Click events for line chart buttons to switch labels and datasets based on timescale selected
-  $('.line-chart-timescale').on('click', 'button', function () {
-    lineTimescale = $(this).attr('value');
-    // Remove active class from last selected button
-    $('.line-chart-timescale button').each( function (i) {
-      $(this).removeClass('active');
-    });
-    // Add active class to currently selected button
-    $(this).addClass('active');
-    // Set line chart variables based on timescale selected
-    lineChart.data.labels = lineDataSet.lineLabels[lineTimescale];
-    lineChart.data.datasets[0].data = lineDataSet.lineData[lineTimescale];
-    lineChart.options.scales.yAxes[0].ticks.max = lineDataSet.lineTicksMax[lineTimescale];
-    lineChart.options.scales.yAxes[0].ticks.stepSize = lineDataSet.lineTicksStepSize[lineTimescale];
-    // Update line chart with selected timescale data
-    lineChart.update();
-  });
-  
-  // Click event to generate a confirmation regarding whether message was sent successfully or not
-  $('#message-form').on('click', 'button', (e) => {
-    e.preventDefault();
-    
-    // Remove an existing confirmation before generating a new one
-    const removeIfExists = $('#confirmation');
-    if (removeIfExists) {removeIfExists.remove();}
-    
-    // Message User elements
-    const messageForm = $('#message-form');
-    const messageForUser = $('#message-user');
-    const messageSent = $('message-sent');
-    const messageError = $('message-error');
-    const sendBtn = $('#send-btn');
-    
-    // Get Input and Textarea values
-    let userName = searchForUser.val(); //searchForUser global variable
-    let userMessage = messageForUser.val();
-    
-    // Confirmation 
-    let sentDialogHtml = '';
-    let systemNotice = '';
+// Click event that hides green dot that denotes a new notification and shows/hides user notifications
+$('#user-notice').on('click', function () {
+  $('#new-notification').hide();
+  userNotifications.slideToggle(400);
+});
 
-    // Create a sent or error confirmation based on conditions
-    if (userName.length > 0 && userMessage.length > 0) {
-      // Sent notice
-      sentDialogHtml = 
-        $(`<div id="confirmation" class="message-sent">Your message to ${userName} has been sent.</div>`);
-      // Clear Input and Textarea values
-      messageForm.find("input[type=text], textarea").val("");
-    } else {
-      // Error notice
-      sentDialogHtml = 
-        $(`<div id="confirmation" class="message-error">Please complete each field before clicking send.</div>`);
-    }
-    // Insert confirmation before Sent button
-    sentDialogHtml.insertBefore(sendBtn);
-    // Fade out confirmation than removing
-    systemNotice = $('#confirmation');
-    systemNotice.delay(3000).fadeOut('slow', () => {
-    systemNotice.remove();
-      
-    });
-    
+// Fade out alert message/user notifications when close button is clicked
+$('.close-btn').on('click', function () {
+  $(this).css('outline', 'none');
+  $(this).parent().slideUp(300);
+});
+
+// Click events for line chart buttons to switch labels and datasets based on timescale selected
+$('.line-chart-timescale').on('click', 'button', function () {
+  lineTimescale = $(this).attr('value');
+  // Remove active class from last selected button
+  $('.line-chart-timescale button').each( function (i) {
+    $(this).removeClass('active');
   });
-  
-  // jQuery UI plugin used to create and populate a dropdown via the autocomplete method for the Search for User field
-  searchForUser.autocomplete({
-    source: searchForUserData,
-    autoFocus: true,
-    delay: 0,
-    minLength: 1,
-    position: { my: "left top", at: "left bottom", collision: "flip" }
-  });
-  
-  // Click event to save user settings to localStorage
-  $('#save-btn').on('click', (e) => {
-    e.preventDefault();
-    
-    // Variables to store setting values
-    let notificationsStatus = settingNotifications.prop('checked');
-    let profileStatus = settingProfilePublic.prop('checked');
-    let timezoneValue = settingTimezone.val();
-    //Set LocalStorage keys and values
-    localStorage.setItem('notifications', JSON.stringify(notificationsStatus));
-    localStorage.setItem('profile', JSON.stringify(profileStatus));
-    localStorage.setItem('timezone', JSON.stringify(timezoneValue));
-  });
-  
-  // Click event to reset settings and remove localStorage
-  $('#reset-btn').on('click', () => {
-    localStorage.clear();
+  // Add active class to currently selected button
+  $(this).addClass('active');
+  // Set line chart variables based on timescale selected
+  lineChart.data.labels = lineDataSet.lineLabels[lineTimescale];
+  lineChart.data.datasets[0].data = lineDataSet.lineData[lineTimescale];
+  lineChart.options.scales.yAxes[0].ticks.max = lineDataSet.lineTicksMax[lineTimescale];
+  lineChart.options.scales.yAxes[0].ticks.stepSize = lineDataSet.lineTicksStepSize[lineTimescale];
+  // Update line chart with selected timescale data
+  lineChart.update();
+});
+
+// Click event to generate a confirmation regarding whether message was sent successfully or not
+$('#message-form').on('click', 'button', (e) => {
+  e.preventDefault();
+
+  // Remove an existing confirmation before generating a new one
+  const removeIfExists = $('#confirmation');
+  if (removeIfExists) {removeIfExists.remove();}
+
+  // Message User elements
+  const messageForm = $('#message-form');
+  const messageForUser = $('#message-user');
+  const messageSent = $('message-sent');
+  const messageError = $('message-error');
+  const sendBtn = $('#send-btn');
+
+  // Get Input and Textarea values
+  let userName = searchForUser.val(); //searchForUser global variable
+  let userMessage = messageForUser.val();
+
+  // Confirmation 
+  let sentDialogHtml = '';
+  let systemNotice = '';
+
+  // Create a sent or error confirmation based on conditions
+  if (userName.length > 0 && userMessage.length > 0) {
+    // Sent notice
+    sentDialogHtml = 
+      $(`<div id="confirmation" class="message-sent">Your message to ${userName} has been sent.</div>`);
+    // Clear Input and Textarea values
+    messageForm.find("input[type=text], textarea").val("");
+  } else {
+    // Error notice
+    sentDialogHtml = 
+      $(`<div id="confirmation" class="message-error">Please complete each field before clicking send.</div>`);
+  }
+  // Insert confirmation before Sent button
+  sentDialogHtml.insertBefore(sendBtn);
+  // Fade out confirmation than removing
+  systemNotice = $('#confirmation');
+  systemNotice.delay(3000).fadeOut('slow', () => {
+  systemNotice.remove();
+
   });
 
+});
+
+// jQuery UI plugin used to create and populate a dropdown via the autocomplete method for the Search for User field
+searchForUser.autocomplete({
+  source: searchForUserData,
+  autoFocus: true,
+  delay: 0,
+  minLength: 1,
+  position: { my: "left top", at: "left bottom", collision: "flip" }
+});
+
+// Click event to save user settings to localStorage
+$('#save-btn').on('click', (e) => {
+  e.preventDefault();
+
+  // Variables to store setting values
+  let notificationsStatus = settingNotifications.prop('checked');
+  let profileStatus = settingProfilePublic.prop('checked');
+  let timezoneValue = settingTimezone.val();
+  //Set LocalStorage keys and values
+  localStorage.setItem('notifications', JSON.stringify(notificationsStatus));
+  localStorage.setItem('profile', JSON.stringify(profileStatus));
+  localStorage.setItem('timezone', JSON.stringify(timezoneValue));
+});
+
+// Click event to reset settings and remove localStorage
+$('#reset-btn').on('click', () => {
+  localStorage.clear();
 });
 
 $(window).on("load", () => {
