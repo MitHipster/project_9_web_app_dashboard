@@ -334,35 +334,24 @@ $.ajax({
   dataType: 'json',
   success: (members) => {
     
-    // Create user name source data for the Search for User autocomplete method
+    // Iterate over JSON data to create user name source data for the Search for User autocomplete method and to create New Members and Recent Activity sections
     $.each(members.results, (i) => {
+      let member = members.results[i];
       // Call function to convert first and last names from all lower case to proper case
-      let firstName = properCase(members.results[i].name.first);
-      let lastName = properCase(members.results[i].name.last);
+      let firstName = properCase(member.name.first);
+      let lastName = properCase(member.name.last);
       let name = firstName + " " + lastName;
       searchForUserData.push(name);
+      if (i < 4) {
+        // Call function to generate HTML for appending in New Members section
+        innerMembersContainer.append(memberHtml(member, name, 'new member'));
+        // Call function to generate HTML for appending in Recent Activity section
+        innerActivityContainer.append(memberHtml(member, name, 'recent activity', i));
+      }
     });
     
     // Sort user name source data
     searchForUserData.sort();
-    
-    // Iterate over JSON data to create New Members section
-    $.each(members.results, (i) => {
-      let member = members.results[i];
-      // Call function to generate HTML for appending in New Members section
-      innerMembersContainer.append(memberHtml(member, 'new member'));
-      // Stop iterating at 4 members
-      return (i !== 3);
-    });
-    
-    // Iterate over JSON data to create Recent Activity section
-    $.each(members.results, (i) => {
-      let activity = members.results[i];
-      // Call function to generate HTML for appending in Recent Activity section
-      innerActivityContainer.append(memberHtml(activity, 'recent activity', i));
-      // Stop iterating at 4 members
-      return (i !== 3);
-    });
   }
 });
 
@@ -373,10 +362,9 @@ let properCase = (text) => {
 };
 
 // Function to generate HTML for the New Members and Recent Activity sections
-let memberHtml = (member, section, i) => {
+let memberHtml = (member, name, section, i) => {
   // Variables for memeber information
   let image = member.picture.thumbnail;
-  let name = properCase(member.name.first) + ' ' + properCase(member.name.last);
   let email = member.email;
   // Variables to hold HTML template literals for member list item detail
   let info = '';
