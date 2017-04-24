@@ -335,8 +335,7 @@ $.ajax({
   success: (members) => {
     
     // Iterate over JSON data to create user name source data for the Search for User autocomplete method and to create New Members and Recent Activity sections
-    $.each(members.results, (i) => {
-      let member = members.results[i];
+    $.each(members.results, (i, member) => {
       // Call function to convert first and last names from all lower case to proper case
       let firstName = properCase(member.name.first);
       let lastName = properCase(member.name.last);
